@@ -73,9 +73,7 @@ export default function EmailForm({ variant = 'primary', className = '' }: Email
             {...register('email')}
             type="email"
             placeholder="Enter your email"
-            className={`w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:border-electric focus:outline-none 
-                     transition-colors duration-200 bg-white text-ink placeholder-gray-400 text-lg font-light
-                     ${errors.email ? 'border-signal focus:border-signal' : ''}`}
+            className={errors.email ? 'border-red-500 focus:border-red-500' : ''}
             aria-invalid={errors.email ? 'true' : 'false'}
             aria-describedby={errors.email ? 'email-error' : undefined}
             disabled={isSubmitting}
@@ -89,7 +87,7 @@ export default function EmailForm({ variant = 'primary', className = '' }: Email
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex items-center gap-2 text-signal text-sm"
+            className="flex items-center gap-2 text-red-500 text-sm"
             role="alert"
             id="email-error"
           >
@@ -114,7 +112,7 @@ export default function EmailForm({ variant = 'primary', className = '' }: Email
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex items-center gap-2 text-signal text-sm"
+            className="flex items-center gap-2 text-red-500 text-sm"
             role="alert"
           >
             <AlertCircle className="w-4 h-4" />
@@ -128,15 +126,11 @@ export default function EmailForm({ variant = 'primary', className = '' }: Email
           variants={buttonVariants}
           whileHover="hover"
           whileTap="tap"
-          className={`w-full font-semibold py-4 px-8 rounded-xl transition-all duration-200 transform text-lg
-                   ${variant === 'primary'
-                     ? 'bg-gradient-to-r from-electric to-hyperlime text-ink hover:shadow-lg'
-                     : 'bg-white text-electric border-2 border-electric hover:bg-electric hover:text-white'
-                   } disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none`}
+          className={variant === 'primary' ? 'btn-primary' : 'btn-secondary'}
         >
           {isSubmitting ? (
             <div className="flex items-center justify-center gap-2">
-              <div className="w-5 h-5 border-2 border-current border-t-transparent rounded-full animate-spin" />
+              <div className="loading-spinner" />
               Joining...
             </div>
           ) : (

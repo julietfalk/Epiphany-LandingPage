@@ -37,11 +37,11 @@ export default function FeatureCard({ icon: Icon, title, description, index }: F
       viewport={{ once: true, margin: "-50px" }}
       className="group relative bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 text-center"
     >
-      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-electric to-hyperlime flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-        <Icon className="w-8 h-8 text-white" />
+      <div className="icon-container">
+        <Icon />
       </div>
       
-      <h3 className="font-headline text-xl text-ink mb-4 tracking-wide">
+      <h3 className="font-headline text-xl text-gray-900 mb-4 tracking-wide">
         {title}
       </h3>
       

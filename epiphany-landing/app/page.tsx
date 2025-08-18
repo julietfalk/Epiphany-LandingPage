@@ -39,7 +39,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="mb-12"
           >
-            <h1 className="font-headline text-5xl sm:text-7xl lg:text-8xl text-ink tracking-widest mb-6">
+            <h1 className="font-headline text-5xl sm:text-7xl lg:text-8xl text-gray-900 tracking-widest mb-6">
               EPIPHANY
             </h1>
           </motion.div>
@@ -49,7 +49,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="font-headline text-2xl sm:text-3xl lg:text-4xl text-ink mb-8 tracking-wide font-light"
+            className="font-headline text-2xl sm:text-3xl lg:text-4xl text-gray-900 mb-8 tracking-wide font-light"
           >
             Go with the Flow.
           </motion.h2>
@@ -86,7 +86,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="font-headline text-3xl sm:text-4xl text-ink mb-6 tracking-wide">
+            <h2 className="font-headline text-3xl sm:text-4xl text-gray-900 mb-6 tracking-wide">
               How It Works
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto font-light">
@@ -118,7 +118,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h3 className="font-headline text-3xl sm:text-4xl text-ink mb-6 tracking-wide">
+            <h3 className="font-headline text-3xl sm:text-4xl text-gray-900 mb-6 tracking-wide">
               Be first for pre-orders.
             </h3>
             <p className="text-gray-600 text-lg mb-12 font-light">
@@ -131,10 +131,10 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-16 bg-ink text-white">
+      <footer className="py-16 bg-gray-900 text-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col sm:flex-row justify-between items-center mb-12">
-            <div className="mb-6 sm:mb-0">
+            <div className="mb-6 sm:mb-0 text-center sm:text-left">
               <h4 className="font-headline text-2xl tracking-wide mb-2">EPIPHANY</h4>
               <p className="text-gray-400 text-sm font-light">Go with the Flow.</p>
             </div>
@@ -149,7 +149,7 @@ export default function Home() {
           
           <div className="pt-8 border-t border-gray-800 text-center">
             <p className="text-gray-500 text-sm font-light">
-              © 2024 Epiphany. All rights reserved.
+              © 2025 Epiphany. All rights reserved.
             </p>
           </div>
         </div>
