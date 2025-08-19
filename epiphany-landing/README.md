@@ -1,36 +1,151 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Epiphany Landing Page
 
-## Getting Started
+A high-conversion landing page for Epiphany - a performance headset + AI browser for flow state.
 
-First, run the development server:
+## 🚀 Features
+
+- **Beautiful Design**: Blue, silver, and coral color scheme with metallic hints
+- **Interactive Cursor**: Paint brush effect that moves the gradient background
+- **Email Collection**: Waitlist signup with Resend integration
+- **Responsive**: Mobile-first design that looks great on all devices
+- **Performance**: Optimized for speed and accessibility
+
+## 📧 Email Setup with Resend
+
+### 1. Get Your Resend API Key
+
+1. Go to [resend.com](https://resend.com) and create an account
+2. Navigate to API Keys in your dashboard
+3. Create a new API key
+4. Copy the API key
+
+### 2. Configure Environment Variables
+
+Create a `.env.local` file in your project root:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Resend API Key
+RESEND_API_KEY=re_xxxxxxxxxxxx
+
+# From email address (must be verified in Resend)
+FROM_EMAIL=noreply@yourdomain.com
+
+# Optional: Admin email for notifications
+ADMIN_EMAIL=admin@yourdomain.com
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Verify Your Domain
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. In Resend dashboard, go to Domains
+2. Add and verify your domain
+3. Update `FROM_EMAIL` in `.env.local` to use your verified domain
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Test the Integration
 
-## Learn More
+1. Start your dev server: `npm run dev`
+2. Go to the landing page
+3. Enter an email address
+4. Check your email for the welcome message
+5. Check your admin email for the notification
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Development
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Install dependencies
+npm install
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Start development server
+npm run dev
 
-## Deploy on Vercel
+# Build for production
+npm run build
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Start production server
+npm start
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📁 Project Structure
+
+```
+epiphany-landing/
+├── app/
+│   ├── api/subscribe/     # Email subscription API
+│   ├── globals.css        # Global styles and animations
+│   ├── layout.tsx         # Root layout
+│   └── page.tsx           # Landing page
+├── components/
+│   ├── EmailForm.tsx      # Email signup form
+│   └── FeatureCard.tsx    # Feature display cards
+├── lib/
+│   └── resend.ts          # Resend email utilities
+└── public/                 # Static assets
+```
+
+## 🎨 Design System
+
+### Colors
+- **Deep Blue**: `#1e3a8a` - Primary brand color
+- **Coral**: `#f97316` - Accent and CTA color
+- **Silver**: `#e5e7eb` - Background and neutral
+- **Metallic**: `#d1d5db` - Subtle metallic hints
+
+### Typography
+- **Headlines**: Saira Extra Condensed + Orbitron
+- **Body**: Inter (clean, readable)
+
+### Animations
+- **Cursor Effect**: Interactive paint brush that moves the gradient
+- **Framer Motion**: Smooth entrance animations
+- **CSS Transitions**: Hover effects and micro-interactions
+
+## 📊 Analytics & Tracking
+
+The current setup includes:
+- ✅ Email collection via Resend
+- ✅ Server-side logging
+- ✅ Admin notifications
+- 🔄 Database storage (TODO)
+- 🔄 Conversion tracking (TODO)
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+1. Push to GitHub
+2. Connect repository to Vercel
+3. Add environment variables in Vercel dashboard
+4. Deploy!
+
+### Other Platforms
+- **Netlify**: Add build command and environment variables
+- **Railway**: Deploy with environment variables
+- **Self-hosted**: Build and serve the static files
+
+## 🔧 Customization
+
+### Colors
+Update CSS variables in `app/globals.css`:
+```css
+:root {
+  --deep-blue: #1e3a8a;
+  --coral: #f97316;
+  --silver: #e5e7eb;
+  /* ... */
+}
+```
+
+### Content
+Edit copy in `app/page.tsx` and `components/`
+
+### Email Templates
+Customize email HTML in `lib/resend.ts`
+
+## 📞 Support
+
+For issues or questions:
+1. Check the console for error messages
+2. Verify your Resend API key and domain
+3. Ensure environment variables are set correctly
+
+## 📄 License
+
+All rights reserved © 2025 Epiphany

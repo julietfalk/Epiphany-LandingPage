@@ -35,17 +35,17 @@ export default function FeatureCard({ icon: Icon, title, description, index }: F
       whileInView="visible"
       whileHover="hover"
       viewport={{ once: true, margin: "-50px" }}
-      className="group relative bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 text-center"
+      className="group relative bg-white rounded-2xl p-8 shadow-sm border border-silver hover:shadow-metallic transition-all duration-300 text-center"
     >
       <div className="icon-container">
         <Icon />
       </div>
       
-      <h3 className="font-headline text-xl text-gray-900 mb-4 tracking-wide">
+      <h3 className="font-headline text-xl text-deep-blue mb-4 tracking-wide">
         {title}
       </h3>
       
-      <p className="text-gray-600 text-base leading-relaxed font-light">
+      <p className="text-slate text-base leading-relaxed font-light">
         {description}
       </p>
     </motion.div>

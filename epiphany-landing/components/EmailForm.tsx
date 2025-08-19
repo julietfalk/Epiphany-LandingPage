@@ -73,14 +73,11 @@ export default function EmailForm({ variant = 'primary', className = '' }: Email
             {...register('email')}
             type="email"
             placeholder="Enter your email"
-            className={errors.email ? 'border-red-500 focus:border-red-500' : ''}
+            className={errors.email ? 'border-coral focus:border-coral' : ''}
             aria-invalid={errors.email ? 'true' : 'false'}
             aria-describedby={errors.email ? 'email-error' : undefined}
             disabled={isSubmitting}
           />
-          <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
-            <Zap className="w-5 h-5 text-gray-400" />
-          </div>
         </div>
 
         {errors.email && (
@@ -138,7 +135,7 @@ export default function EmailForm({ variant = 'primary', className = '' }: Email
           )}
         </motion.button>
 
-        <p className="text-xs text-gray-500 text-center font-light">
+        <p className="text-xs text-slate text-center font-light">
           No spam. Unsubscribe anytime.
         </p>
       </form>

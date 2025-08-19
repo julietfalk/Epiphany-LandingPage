@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
+import { sendWelcomeEmail, sendAdminNotification } from '@/lib/sendgrid';
+import { addSubscriber } from '@/lib/supabase';
 
 const subscribeSchema = z.object({
   email: z.string().email('Invalid email address'),
@@ -12,30 +14,47 @@ export async function POST(request: NextRequest) {
     // Validate request body
     const validatedData = subscribeSchema.parse(body);
     
-    // Log the subscription (replace with your actual logging/analytics)
+    // Get user info for tracking
+    const userAgent = request.headers.get('user-agent');
+    const ipAddress = request.headers.get('x-forwarded-for') || 'unknown';
+    
+    // Log the subscription
     console.log('New subscription:', {
       email: validatedData.email,
       timestamp: new Date().toISOString(),
-      userAgent: request.headers.get('user-agent'),
-      ip: request.headers.get('x-forwarded-for') || 'unknown',
+      userAgent,
+      ip: ipAddress,
     });
 
-    // TODO: Hook up to real Email Service Provider (ESP)
-    // Examples: Mailchimp, ConvertKit, SendGrid, etc.
-    // const response = await espClient.subscribe(validatedData.email);
-    
-    // TODO: Store in database for analytics
-    // await db.subscriptions.create({ email: validatedData.email });
-    
-    // TODO: Send welcome email
-    // await emailService.sendWelcome(validatedData.email);
+    // Store subscriber in Supabase database
+    const dbResult = await addSubscriber(validatedData.email, userAgent, ipAddress);
+    if (!dbResult.success) {
+      console.error('Failed to store subscriber in database:', dbResult.error);
+      // Continue anyway - don't fail the subscription
+    }
+
+    // Send welcome email via SendGrid
+    const welcomeResult = await sendWelcomeEmail(validatedData.email);
+    if (!welcomeResult.success) {
+      console.error('Failed to send welcome email:', welcomeResult.error);
+      // Continue anyway - don't fail the subscription
+    }
+
+    // Send admin notification
+    const adminResult = await sendAdminNotification(validatedData.email);
+    if (!adminResult.success) {
+      console.error('Failed to send admin notification:', adminResult.error);
+      // Continue anyway - don't fail the subscription
+    }
     
     // Return success response
     return NextResponse.json(
       { 
         success: true, 
-        message: 'Successfully subscribed to waitlist',
-        timestamp: new Date().toISOString()
+        message: 'Successfully subscribed to waitlist! Check your email for confirmation.',
+        timestamp: new Date().toISOString(),
+        emailSent: welcomeResult.success,
+        storedInDatabase: dbResult.success
       },
       { status: 200 }
     );
