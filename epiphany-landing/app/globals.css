@@ -1003,33 +1003,11 @@ button:disabled {
 }
 
 /* Enhanced success state animations */
-.success-checkmark {
-  animation: checkmark-bounce 0.6s ease-out 0.2s both;
+.success-fade-in {
+  animation: fade-slide-up 0.6s ease-out both;
 }
 
-@keyframes checkmark-bounce {
-  0% {
-    transform: scale(0) rotate(-180deg);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1.2) rotate(-90deg);
-  }
-  100% {
-    transform: scale(1) rotate(0deg);
-    opacity: 1;
-  }
-}
-
-.success-text {
-  animation: text-slide-up 0.5s ease-out both;
-}
-
-.success-text:nth-child(1) { animation-delay: 0.4s; }
-.success-text:nth-child(2) { animation-delay: 0.6s; }
-.success-text:nth-child(3) { animation-delay: 0.8s; }
-
-@keyframes text-slide-up {
+@keyframes fade-slide-up {
   0% {
     opacity: 0;
     transform: translateY(20px);
@@ -1038,6 +1016,42 @@ button:disabled {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.success-fade-out {
+  animation: fade-slide-down 0.4s ease-out both;
+}
+
+@keyframes fade-slide-down {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Gradient glow effect */
+.gradient-glow {
+  position: relative;
+}
+
+.gradient-glow::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, var(--deep-blue), var(--coral), var(--silver));
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0.3;
+  filter: blur(8px);
+  transition: opacity 0.3s ease;
+}
+
+.gradient-glow:hover::before {
+  opacity: 0.5;
 }
 
 /* Sparkle animation */
