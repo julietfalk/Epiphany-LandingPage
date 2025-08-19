@@ -184,7 +184,7 @@ export default function Home() {
               {/* Video caption */}
               <div className="text-center mt-8">
                 <p className="text-slate text-sm font-medium">
-                  Beta product demo • Actual footage from development
+                  Beta product demo
                 </p>
               </div>
             </motion.div>
