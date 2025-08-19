@@ -127,6 +127,71 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Product Video Section */}
+        <section className="py-24 bg-white">
+          <div className="max-w-6xl mx-auto px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="font-headline text-3xl sm:text-4xl text-deep-blue mb-6 tracking-wide">
+                See Epiphany in Action
+              </h2>
+              <p className="text-slate text-lg max-w-2xl mx-auto font-light">
+                Watch how the headset and AI browser work together to create your perfect flow state.
+              </p>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              {/* Video Container with elegant border and shadow */}
+              <div className="relative max-w-4xl mx-auto">
+                <div className="absolute inset-0 bg-gradient-to-r from-deep-blue via-silver to-coral rounded-3xl opacity-20 blur-xl transform scale-105"></div>
+                <div className="relative bg-white rounded-3xl p-2 shadow-2xl">
+                  <div className="relative overflow-hidden rounded-2xl bg-black">
+                    <video
+                      className="w-full h-auto"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      poster="/video-poster.svg"
+                    >
+                      <source src="/epiphany-demo.mp4" type="video/mp4" />
+                      <source src="/epiphany-demo.webm" type="video/webm" />
+                      Your browser does not support the video tag.
+                    </video>
+                    
+                    {/* Play button overlay for mobile */}
+                    <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 md:hidden">
+                      <div className="w-16 h-16 bg-white bg-opacity-90 rounded-full flex items-center justify-center mobile-play-button">
+                        <svg className="w-8 h-8 text-deep-blue ml-1" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Video caption */}
+              <div className="text-center mt-8">
+                <p className="text-slate text-sm font-medium">
+                  Beta product demo • Actual footage from development
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Features Section */}
         <section className="py-24 bg-silver">
           <div className="max-w-7xl mx-auto px-6">

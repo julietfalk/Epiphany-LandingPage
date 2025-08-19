@@ -48,6 +48,43 @@ ADMIN_EMAIL=admin@yourdomain.com
 4. Check your email for the welcome message
 5. Check your admin email for the notification
 
+## 🎥 Video Integration
+
+### Adding Your Product Video
+
+1. **Video Files**: Place your video files in the `public/` folder:
+   - `epiphany-demo.mp4` (MP4 format - recommended)
+   - `epiphany-demo.webm` (WebM format - for better compression)
+   - `video-poster.jpg` (Poster image shown before video loads)
+
+2. **Video Specifications**:
+   - **Format**: MP4 (H.264) + WebM for best compatibility
+   - **Resolution**: 1920x1080 or 1280x720 (16:9 aspect ratio)
+   - **Duration**: 15-30 seconds for optimal engagement
+   - **File Size**: Keep under 10MB for fast loading
+   - **Content**: Show the headset, AI browser interface, and user experience
+
+3. **Video Content Ideas**:
+   - Headset being worn and activated
+   - AI browser interface in action
+   - Focus mode transitions
+   - User achieving flow state
+   - Data visualization of focus patterns
+
+4. **Optimization Tips**:
+   - Use HandBrake or FFmpeg to compress video
+   - Consider creating multiple quality versions
+   - Test on different devices and connections
+
+### Current Video Section Features
+
+- **Auto-play loop** on desktop (muted for user experience)
+- **Mobile play button** overlay for better mobile experience
+- **Elegant border** with gradient glow effect
+- **Responsive design** that works on all screen sizes
+- **Loading states** and fallback handling
+- **Smooth animations** that match your page design
+
 ## 🛠️ Development
 
 ```bash
