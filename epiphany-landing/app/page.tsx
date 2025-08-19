@@ -19,8 +19,8 @@ const features = [
   },
   {
     icon: Radar,
-    title: "Flow tracking—like Oura, for focus.",
-    description: "Track your focus patterns and flow states over time, just like Oura tracks your sleep."
+    title: "Track your focus patterns over time.",
+    description: "Monitor your focus trends and flow states to optimize your performance."
   }
 ];
 
