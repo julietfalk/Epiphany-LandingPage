@@ -139,12 +139,9 @@ export default function Home() {
             <h2 className="font-headline text-3xl sm:text-4xl text-deep-blue mb-6 tracking-wide">
               How It Works
             </h2>
-            <p className="text-slate text-lg max-w-2xl mx-auto font-light">
-              Three components working together to unlock your peak performance
-            </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+          <div className="features-grid">
             {features.map((feature, index) => (
               <FeatureCard
                 key={index}
