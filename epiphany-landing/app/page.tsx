@@ -166,7 +166,6 @@ export default function Home() {
                       poster="/video-poster.svg"
                     >
                       <source src="/epiphany-demo.mp4" type="video/mp4" />
-                      <source src="/epiphany-demo.webm" type="video/webm" />
                       Your browser does not support the video tag.
                     </video>
                     

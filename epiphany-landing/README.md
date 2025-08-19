@@ -52,16 +52,15 @@ ADMIN_EMAIL=admin@yourdomain.com
 
 ### Adding Your Product Video
 
-1. **Video Files**: Place your video files in the `public/` folder:
-   - `epiphany-demo.mp4` (MP4 format - recommended)
-   - `epiphany-demo.webm` (WebM format - for better compression)
-   - `video-poster.jpg` (Poster image shown before video loads)
+1. **Video Files**: Place your video file in the `public/` folder:
+   - `epiphany-demo.mp4` (MP4 format - required)
+   - `video-poster.jpg` (Optional poster image to replace the SVG)
 
 2. **Video Specifications**:
-   - **Format**: MP4 (H.264) + WebM for best compatibility
+   - **Format**: MP4 (H.264) - widely supported
    - **Resolution**: 1920x1080 or 1280x720 (16:9 aspect ratio)
-   - **Duration**: 15-30 seconds for optimal engagement
-   - **File Size**: Keep under 10MB for fast loading
+   - **Duration**: 8-30 seconds (your 8-second video is perfect!)
+   - **File Size**: Keep under 15MB for fast loading
    - **Content**: Show the headset, AI browser interface, and user experience
 
 3. **Video Content Ideas**:
