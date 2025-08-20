@@ -217,9 +217,9 @@ export default function Home() {
 
         {/* CTA Section */}
         <section className="py-24 relative">
-          {/* Background image with dark overlay - same as hero */}
+          {/* Background image with dark overlay - exactly same as hero */}
           <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/hero-background.png?v=1)' }} />
-          <div className="absolute inset-0 bg-deep-blue bg-opacity-50" />
+          <div className="absolute inset-0 bg-black bg-opacity-40" />
           
           <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
             <motion.div
