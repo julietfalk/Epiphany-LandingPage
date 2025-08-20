@@ -40,16 +40,15 @@ export default function Home() {
       const yPercent = (y / rect.height) * 2 - 1; // -1..1
 
       // Subtle movement for background image
-      const maxTranslate = 20; // px - reduced for subtle effect
+      const maxTranslate = 20; // px - subtle effect
       const tx = Math.max(-maxTranslate, Math.min(maxTranslate, xPercent * maxTranslate));
       const ty = Math.max(-maxTranslate, Math.min(maxTranslate, yPercent * maxTranslate));
 
-      // Subtle scale and rotation
+      // Subtle scale
       const baseScale = 1.0;
       const scaleMod = 1 + (Math.abs(xPercent) + Math.abs(yPercent)) * 0.02; // very subtle
-      const rot = xPercent * 2; // degrees - very subtle
 
-      const transform = `translate(${tx}px, ${ty}px) rotate(${rot}deg) scale(${(baseScale * scaleMod).toFixed(3)})`;
+      const transform = `translate(${tx}px, ${ty}px) scale(${(baseScale * scaleMod).toFixed(3)})`;
       
       backgroundImage.style.transform = transform;
     };
