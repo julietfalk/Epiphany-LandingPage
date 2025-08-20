@@ -188,7 +188,7 @@ export default function EmailForm({ variant = 'primary', className = '' }: Email
           )}
         </motion.button>
 
-        <p className="text-xs text-slate text-center font-light">
+        <p className="text-white text-xs text-center font-light">
           No spam. Unsubscribe anytime.
         </p>
       </form>

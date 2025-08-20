@@ -923,15 +923,14 @@ input[type="email"]::placeholder {
 }
 
 .feature-card .icon-container {
-  width: 5rem;
-  height: 5rem;
-  border-radius: 20px;
-  background: linear-gradient(135deg, var(--deep-blue), var(--coral));
+  width: 64px;
+  height: 64px;
+  background: var(--deep-blue);
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 2rem;
-  transition: all 0.4s ease;
+  margin: 0 auto 1.5rem;
   position: relative;
   overflow: hidden;
 }
@@ -958,10 +957,11 @@ input[type="email"]::placeholder {
 }
 
 .feature-card .icon-container svg {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 32px;
+  height: 32px;
   color: white;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  z-index: 2;
+  position: relative;
 }
 
 .feature-card h3 {
@@ -1134,4 +1134,27 @@ input[type="email"]::placeholder {
   100% {
     background-position: 200% 0;
   }
+}
+
+/* Email form text visibility */
+input[type="email"] {
+  color: white;
+}
+
+input[type="email"]::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Privacy text below email form */
+.text-slate {
+  color: white !important;
+}
+
+/* Success state text */
+.success-state p {
+  color: white;
+}
+
+.success-state h3 {
+  color: white;
 }
