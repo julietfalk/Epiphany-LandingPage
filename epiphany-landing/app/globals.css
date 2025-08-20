@@ -16,8 +16,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Brand Colors - Updated to match inspiration image */
+/* Brand Colors - Updated to match urban cityscape palette */
 :root {
+  /* Brand Colors - Updated to match urban cityscape palette */
   --electric: #2563ff;
   --hyperlime: #a6ff00;
   --signal: #ff2d55;
@@ -25,17 +26,17 @@ body {
   --metal-from: #dfe4ea;
   --metal-to: #aeb4bd;
   
-  /* New color scheme based on inspiration image */
-  --deep-blue: #1e3a8a;
-  --medium-blue: #3b82f6;
-  --light-blue: #60a5fa;
-  --silver: #e5e7eb;
-  --metallic-silver: #d1d5db;
-  --coral: #f97316;
-  --light-coral: #fb923c;
-  --soft-coral: #fed7aa;
-  --navy: #1e40af;
-  --slate: #475569;
+  /* New color scheme based on urban cityscape background */
+  --deep-blue: #0f172a;        /* Deep night sky blue */
+  --dark-teal: #0f4c75;        /* Dark teal from building facades */
+  --charcoal: #1e293b;         /* Charcoal grey from structures */
+  --midnight: #0c1426;         /* Deepest shadows */
+  --bright-white: #f8fafc;     /* Bright white lights */
+  --pale-blue: #e0f2fe;        /* Pale blue highlights */
+  --warm-glow: #fef3c7;        /* Subtle warm glows */
+  --accent-red: #dc2626;       /* Distant red/orange lights */
+  --urban-blue: #1e40af;       /* Urban blue tones */
+  --slate: #475569;            /* Slate for text */
 }
 
 /* Typography */
@@ -294,52 +295,30 @@ body {
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
 
+/* Gradient utilities */
 .bg-gradient-to-r {
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  background: linear-gradient(to right, var(--deep-blue), var(--dark-teal), var(--charcoal));
 }
 
 .from-deep-blue {
   --tw-gradient-from: var(--deep-blue);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(30, 58, 138, 0));
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(15, 23, 42, 0));
 }
 
-.via-silver {
-  --tw-gradient-stops: var(--tw-gradient-from), var(--silver), var(--tw-gradient-to, rgba(229, 231, 235, 0));
+.via-dark-teal {
+  --tw-gradient-stops: var(--tw-gradient-from), var(--dark-teal), var(--tw-gradient-to, rgba(15, 76, 117, 0));
 }
 
-.to-coral {
-  --tw-gradient-to: var(--coral);
+.to-charcoal {
+  --tw-gradient-to: var(--charcoal);
 }
 
-.from-blue-50 {
-  --tw-gradient-from: #eff6ff;
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(239, 246, 255, 0));
-}
-
-.via-white {
-  --tw-gradient-stops: var(--tw-gradient-from), #ffffff, var(--tw-gradient-to, rgba(255, 255, 255, 0));
-}
-
-.to-green-50 {
-  --tw-gradient-to: #f0fdf4;
-}
-
-.from-deep-blue {
-  --tw-gradient-from: var(--deep-blue);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(30, 58, 138, 0));
-}
-
-.to-coral {
-  --tw-gradient-to: var(--coral);
-}
-
-/* Metallic gradients */
 .bg-metallic-gradient {
-  background: linear-gradient(135deg, var(--silver) 0%, var(--metallic-silver) 50%, var(--coral) 100%);
+  background: linear-gradient(135deg, var(--deep-blue), var(--dark-teal), var(--charcoal));
 }
 
 .bg-blue-coral-gradient {
-  background: linear-gradient(135deg, var(--deep-blue) 0%, var(--medium-blue) 25%, var(--silver) 50%, var(--soft-coral) 75%, var(--coral) 100%);
+  background: linear-gradient(135deg, var(--deep-blue), var(--dark-teal), var(--accent-red));
 }
 
 /* Borders */

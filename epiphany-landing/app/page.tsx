@@ -149,7 +149,7 @@ export default function Home() {
             >
               {/* Video Container with elegant border and shadow - smaller size */}
               <div className="relative max-w-2xl mx-auto">
-                <div className="absolute inset-0 bg-gradient-to-r from-deep-blue via-silver to-coral rounded-3xl opacity-20 blur-xl transform scale-105"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-deep-blue via-dark-teal to-charcoal rounded-3xl opacity-20 blur-xl transform scale-105"></div>
                 <div className="relative bg-white rounded-3xl p-2 shadow-2xl">
                   <div className="relative overflow-hidden rounded-2xl bg-black">
                     <video
@@ -187,7 +187,7 @@ export default function Home() {
         </section>
 
         {/* Features Section */}
-        <section className="py-24 bg-silver">
+        <section className="py-24 bg-charcoal">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -196,7 +196,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-center mb-20"
             >
-              <h2 className="font-headline text-3xl sm:text-4xl text-deep-blue mb-6 tracking-wide">
+              <h2 className="font-headline text-3xl sm:text-4xl text-bright-white mb-6 tracking-wide">
                 How It Works
               </h2>
             </motion.div>
@@ -216,7 +216,7 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 bg-gradient-to-r from-deep-blue via-silver to-coral">
+        <section className="py-24 bg-gradient-to-r from-deep-blue via-dark-teal to-charcoal">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
