@@ -95,7 +95,7 @@ export default function Home() {
               transition={{ delay: 0.3, duration: 0.8 }}
               className="font-headline text-2xl sm:text-3xl lg:text-4xl text-white mb-8 tracking-wide font-light drop-shadow-md"
             >
-              Go with the Flow.
+              Go with the Flow
             </motion.h2>
 
             {/* Subhead */}
@@ -149,7 +149,7 @@ export default function Home() {
             >
               {/* Video Container with elegant border and shadow - smaller size */}
               <div className="relative max-w-2xl mx-auto">
-                <div className="absolute inset-0 bg-gradient-to-r from-deep-blue via-dark-teal to-charcoal rounded-3xl opacity-20 blur-xl transform scale-105"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-deep-blue to-dark-teal rounded-3xl opacity-15 blur-xl transform scale-105"></div>
                 <div className="relative bg-white rounded-3xl p-2 shadow-2xl">
                   <div className="relative overflow-hidden rounded-2xl bg-black">
                     <video
@@ -219,7 +219,7 @@ export default function Home() {
         <section className="py-24 relative">
           {/* Background image with dark overlay - same as hero */}
           <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/hero-background.png?v=1)' }} />
-          <div className="absolute inset-0 bg-black bg-opacity-60" />
+          <div className="absolute inset-0 bg-deep-blue bg-opacity-50" />
           
           <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
             <motion.div
