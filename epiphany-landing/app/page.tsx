@@ -132,10 +132,10 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="font-headline text-3xl sm:text-4xl text-bright-white mb-6 tracking-wide">
+              <h2 className="font-headline text-3xl sm:text-4xl text-deep-blue mb-6 tracking-wide">
                 Epiphany in Action
               </h2>
-              <p className="text-pale-blue text-lg max-w-2xl mx-auto font-light">
+              <p className="text-slate text-lg max-w-2xl mx-auto font-light">
                 Experience the flow state that Epiphany helps you achieve.
               </p>
             </motion.div>
@@ -178,7 +178,7 @@ export default function Home() {
               
               {/* Video caption */}
               <div className="text-center mt-8">
-                <p className="text-pale-blue text-sm font-medium">
+                <p className="text-slate text-sm font-medium">
                   Epiphany vibe
                 </p>
               </div>
@@ -187,7 +187,7 @@ export default function Home() {
         </section>
 
         {/* Features Section */}
-        <section className="py-24 bg-charcoal">
+        <section className="py-24 bg-slate">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -196,7 +196,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-center mb-20"
             >
-              <h2 className="font-headline text-3xl sm:text-4xl text-bright-white mb-6 tracking-wide">
+              <h2 className="font-headline text-3xl sm:text-4xl text-deep-blue mb-6 tracking-wide">
                 How It Works
               </h2>
             </motion.div>
@@ -216,8 +216,12 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 bg-gradient-to-r from-deep-blue via-dark-teal to-charcoal">
-          <div className="max-w-4xl mx-auto px-6 text-center">
+        <section className="py-24 relative">
+          {/* Background image with dark overlay - same as hero */}
+          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/hero-background.png?v=1)' }} />
+          <div className="absolute inset-0 bg-black bg-opacity-60" />
+          
+          <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

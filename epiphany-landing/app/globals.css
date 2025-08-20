@@ -646,11 +646,11 @@ input[type="email"]::placeholder {
   color: #9ca3af;
 }
 
-/* Button styles with enhanced contrast */
+/* Button styles with better contrast */
 .btn-primary {
-  background: var(--bright-white);
-  color: var(--deep-blue);
-  border: 2px solid var(--bright-white);
+  background: var(--deep-blue);
+  color: white;
+  border: 2px solid var(--deep-blue);
   padding: 1rem 2rem;
   border-radius: 12px;
   font-weight: 600;
@@ -663,17 +663,17 @@ input[type="email"]::placeholder {
 }
 
 .btn-primary:hover {
-  background: var(--pale-blue);
-  border-color: var(--pale-blue);
-  color: var(--deep-blue);
+  background: var(--dark-teal);
+  border-color: var(--dark-teal);
+  color: white;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(248, 250, 252, 0.3);
+  box-shadow: 0 8px 25px rgba(15, 76, 117, 0.3);
 }
 
 .btn-secondary {
-  background: rgba(248, 250, 252, 0.1);
-  color: var(--bright-white);
-  border: 2px solid rgba(248, 250, 252, 0.3);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--deep-blue);
+  border: 2px solid rgba(255, 255, 255, 0.8);
   padding: 1rem 2rem;
   border-radius: 12px;
   font-weight: 600;
@@ -687,11 +687,11 @@ input[type="email"]::placeholder {
 }
 
 .btn-secondary:hover {
-  background: rgba(248, 250, 252, 0.2);
-  border-color: var(--pale-blue);
-  color: var(--pale-blue);
+  background: white;
+  border-color: white;
+  color: var(--deep-blue);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(248, 250, 252, 0.2);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
 }
 
 /* Icon container - Updated to new color scheme */
