@@ -1,4 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;600;700&display=swap');
+
+
+/* The Seasons font with splice effect */
+@import url('https://fonts.googleapis.com/css2?family=The+Seasons:wght@400&display=swap');
+
+/* Section title styling with The Seasons font */
+.section-title {
+  font-family: 'The Seasons', serif;
+  font-weight: 400;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+
+
+/* Hero title specific styling */
+.hero-title {
+  font-family: 'The Seasons', serif;
+  font-weight: 400;
+  font-size: 4rem;
+  line-height: 1.1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+/* Explainer text box - same color as button */
+.explainer-box {
+  background: var(--deep-blue);
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  display: inline-block;
+  border: 2px solid var(--deep-blue);
+}
+
+
 
 /* Reset and base styles */
 * {
@@ -8,7 +48,8 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
   line-height: 1.6;
   color: #0b0d12;
   background: #ffffff;
@@ -41,14 +82,15 @@ body {
 
 /* Typography */
 .font-headline {
-  font-family: 'Saira Extra Condensed', 'Orbitron', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 .font-body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
 }
 
 /* Layout utilities */
@@ -565,7 +607,7 @@ body {
 
 /* Font weights */
 .font-light {
-  font-weight: 300;
+  font-weight: 700;
 }
 
 .font-semibold {
@@ -631,7 +673,7 @@ input[type="email"] {
   border: 2px solid var(--metallic-silver);
   border-radius: 0.75rem;
   font-size: 1.125rem;
-  font-weight: 300;
+  font-weight: 700;
   background: white;
   color: #111827;
   transition: border-color 0.2s ease;
@@ -969,7 +1011,7 @@ input[type="email"]::placeholder {
 }
 
 .feature-card h3 {
-  font-family: 'Saira Extra Condensed', 'Orbitron', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 1.5rem;
   line-height: 1.3;
@@ -983,7 +1025,7 @@ input[type="email"]::placeholder {
   color: var(--slate);
   font-size: 1.125rem;
   line-height: 1.7;
-  font-weight: 300;
+  font-weight: 700;
   opacity: 0.9;
 }
 

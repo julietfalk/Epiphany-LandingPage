@@ -83,7 +83,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="mb-12"
             >
-              <h1 className="font-headline text-5xl sm:text-7xl lg:text-8xl text-white tracking-widest mb-6 drop-shadow-lg">
+              <h1 className="hero-title text-white tracking-widest mb-6 drop-shadow-lg">
                 EPIPHANY
               </h1>
             </motion.div>
@@ -105,7 +105,7 @@ export default function Home() {
               transition={{ delay: 0.6, duration: 0.8 }}
               className="text-lg sm:text-xl text-white max-w-3xl mx-auto mb-16 leading-relaxed font-light opacity-90 drop-shadow-sm"
             >
-              <span className="hero-blob">
+              <span className="explainer-box">
                 Epiphany is a performance headset + AI browser that helps you enter deep focus on demand—and shows your flow trends over time.
               </span>
             </motion.p>
@@ -123,23 +123,8 @@ export default function Home() {
         </section>
 
         {/* Product Video Section */}
-        <section className="py-24 bg-gradient-to-b from-white via-pale-blue to-white">
+        <section className="py-16 bg-gradient-to-b from-white via-pale-blue to-white">
           <div className="max-w-6xl mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="font-headline text-3xl sm:text-4xl text-deep-blue mb-6 tracking-wide">
-                Epiphany in Action
-              </h2>
-              <p className="text-slate text-lg max-w-2xl mx-auto font-light">
-                Experience the flow state that Epiphany helps you achieve.
-              </p>
-            </motion.div>
-            
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -148,7 +133,7 @@ export default function Home() {
               className="relative"
             >
               {/* Video Container with elegant border and shadow - smaller size */}
-              <div className="relative max-w-2xl mx-auto">
+              <div className="relative max-w-lg mx-auto">
                 <div className="absolute inset-0 bg-gradient-to-r from-deep-blue to-dark-teal rounded-3xl opacity-15 blur-xl transform scale-105"></div>
                 <div className="relative bg-white rounded-3xl p-2 shadow-2xl">
                   <div className="relative overflow-hidden rounded-2xl bg-black">
@@ -164,20 +149,13 @@ export default function Home() {
                       Your browser does not support the video tag.
                     </video>
                     
-                    {/* Play button overlay for mobile */}
-                    <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 md:hidden">
-                      <div className="w-16 h-16 bg-white bg-opacity-90 rounded-full flex items-center justify-center mobile-play-button">
-                        <svg className="w-8 h-8 text-deep-blue ml-1" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M8 5v14l11-7z"/>
-                        </svg>
-                      </div>
-                    </div>
+
                   </div>
                 </div>
               </div>
               
               {/* Video caption */}
-              <div className="text-center mt-8">
+              <div className="text-center mt-6">
                 <p className="text-slate text-sm font-medium">
                   Epiphany vibe
                 </p>
@@ -187,7 +165,7 @@ export default function Home() {
         </section>
 
         {/* Features Section */}
-        <section className="py-24 bg-gradient-to-br from-slate via-charcoal to-midnight">
+        <section className="py-24" style={{ backgroundColor: '#e0f2fe' }}>
           <div className="max-w-7xl mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -196,7 +174,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-center mb-20"
             >
-              <h2 className="font-headline text-3xl sm:text-4xl text-deep-blue mb-6 tracking-wide">
+              <h2 className="section-title text-deep-blue mb-6 tracking-wide">
                 How It Works
               </h2>
             </motion.div>
@@ -229,7 +207,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="mb-16"
             >
-              <h3 className="font-headline text-3xl sm:text-4xl text-white mb-6 tracking-wide drop-shadow-lg">
+              <h3 className="section-title text-white mb-6 tracking-wide drop-shadow-lg">
                 Be first for pre-orders.
               </h3>
               <p className="text-white text-lg mb-12 font-light opacity-90 drop-shadow-md">
@@ -246,7 +224,7 @@ export default function Home() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="flex flex-col sm:flex-row justify-between items-center mb-12">
               <div className="mb-6 sm:mb-0 text-center sm:text-left">
-                <h4 className="font-headline text-2xl tracking-wide mb-2 text-white drop-shadow-sm">EPIPHANY</h4>
+                <h4 className="section-title text-white tracking-wide mb-2 drop-shadow-sm">EPIPHANY</h4>
                 <p className="text-white text-sm font-light opacity-90">Go with the Flow.</p>
               </div>
               

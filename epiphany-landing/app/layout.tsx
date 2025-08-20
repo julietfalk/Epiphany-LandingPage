@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Epiphany - Go with the Flow | Wearable Neurotech + AI Browser",
-  description: "Epiphany is a performance headset + AI browser that helps you enter deep focus on demand—and shows your flow trends over time.",
+  title: "Epiphany - Performance Headset + AI Browser",
+  description: 'Enter deep focus on demand with Epiphany. Performance headset + AI browser for optimal flow state.',
   keywords: ["neurotech", "flow state", "AI browser", "deep focus", "productivity", "wearable tech"],
   authors: [{ name: "Epiphany" }],
   creator: "Epiphany",
@@ -58,12 +58,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#2563ff" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=The+Seasons:wght@400&family=Poppins:wght@700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased">
         {children}
