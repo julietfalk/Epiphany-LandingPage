@@ -28,8 +28,8 @@ export default function Home() {
   // Cursor brush effect
   React.useEffect(() => {
     const heroSection = document.getElementById('hero-section');
-    const gradientBg = heroSection?.querySelector('.bg-gradient') as HTMLElement;
-    if (!heroSection || !gradientBg) return;
+    const backgroundImage = heroSection?.querySelector('[style*="backgroundImage"]') as HTMLElement;
+    if (!heroSection || !backgroundImage) return;
 
     const handleMouseMove = (e: MouseEvent) => {
       const rect = heroSection.getBoundingClientRect();
@@ -39,28 +39,23 @@ export default function Home() {
       const xPercent = (x / rect.width) * 2 - 1; // -1..1
       const yPercent = (y / rect.height) * 2 - 1; // -1..1
 
-      // Much stronger translation for visible effect
-      const maxTranslate = 45; // px - slightly reduced from 60
+      // Subtle movement for background image
+      const maxTranslate = 20; // px - reduced for subtle effect
       const tx = Math.max(-maxTranslate, Math.min(maxTranslate, xPercent * maxTranslate));
       const ty = Math.max(-maxTranslate, Math.min(maxTranslate, yPercent * maxTranslate));
 
-      // Base scale to hide edges + more dramatic modulation
-      const baseScale = 1.25;
-      const scaleMod = 1 + (Math.abs(xPercent) + Math.abs(yPercent)) * 0.08; // slightly reduced from 0.1
+      // Subtle scale and rotation
+      const baseScale = 1.0;
+      const scaleMod = 1 + (Math.abs(xPercent) + Math.abs(yPercent)) * 0.02; // very subtle
+      const rot = xPercent * 2; // degrees - very subtle
 
-      // Much more rotation for visible effect
-      const rot = xPercent * 6; // degrees - slightly reduced from 8
-
-      const gradientTransform = `translate(${tx}px, ${ty}px) rotate(${rot}deg) scale(${(baseScale * scaleMod).toFixed(3)})`;
-      const gradientFilter = `saturate(${(1 + Math.abs(xPercent) * 0.2).toFixed(3)}) hue-rotate(${xPercent * 5}deg)`;
-
-      gradientBg.style.setProperty('--gradient-transform', gradientTransform);
-      gradientBg.style.setProperty('--gradient-filter', gradientFilter);
+      const transform = `translate(${tx}px, ${ty}px) rotate(${rot}deg) scale(${(baseScale * scaleMod).toFixed(3)})`;
+      
+      backgroundImage.style.transform = transform;
     };
 
     const handleMouseLeave = () => {
-      gradientBg.style.setProperty('--gradient-transform', 'scale(1.3)');
-      gradientBg.style.setProperty('--gradient-filter', 'none');
+      backgroundImage.style.transform = 'scale(1.0)';
     };
 
     heroSection.addEventListener('mousemove', handleMouseMove);
@@ -76,9 +71,10 @@ export default function Home() {
     <SubscriptionProvider>
       <main className="min-h-screen bg-white">
         {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center justify-center px-6 hero-ripple" id="hero-section">
-          {/* Background gradient matching inspiration image */}
-          <div className="absolute inset-0 bg-blue-coral-gradient opacity-80 bg-gradient" />
+        <section className="relative min-h-screen flex items-center justify-center px-6" id="hero-section">
+          {/* Background image with dark overlay */}
+          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/hero-background.jpg)' }} />
+          <div className="absolute inset-0 bg-black bg-opacity-40" />
           
           <div className="relative z-10 max-w-4xl mx-auto text-center">
             {/* Logo */}
