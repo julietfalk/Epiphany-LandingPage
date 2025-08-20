@@ -72,7 +72,7 @@ export default function Home() {
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center px-6" id="hero-section">
           {/* Background image with dark overlay */}
-          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/hero-background.jpeg?v=1)' }} />
+          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/hero-background.png?v=1)' }} />
           <div className="absolute inset-0 bg-black bg-opacity-40" />
           
           <div className="relative z-10 max-w-4xl mx-auto text-center">
