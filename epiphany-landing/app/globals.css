@@ -841,14 +841,18 @@ input[type="email"]::placeholder {
   -webkit-backdrop-filter: blur(2px);
 }
 
-/* Organic hero legibility blob */
+/* Hero blob with subtle gradient */
 .hero-blob {
-  position: relative;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(15, 76, 117, 0.7), rgba(30, 41, 59, 0.8));
+  padding: 1.5rem 2rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   display: inline-block;
-  z-index: 0;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.4);
 }
 
+/* Organic hero legibility blob */
 .hero-blob::before {
   content: "";
   position: absolute;

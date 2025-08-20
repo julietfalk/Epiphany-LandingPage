@@ -123,7 +123,7 @@ export default function Home() {
         </section>
 
         {/* Product Video Section */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-gradient-to-b from-white via-pale-blue to-white">
           <div className="max-w-6xl mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -187,7 +187,7 @@ export default function Home() {
         </section>
 
         {/* Features Section */}
-        <section className="py-24 bg-slate">
+        <section className="py-24 bg-gradient-to-br from-slate via-charcoal to-midnight">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
