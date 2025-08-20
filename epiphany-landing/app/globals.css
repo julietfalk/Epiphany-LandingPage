@@ -238,24 +238,46 @@ body {
   color: #111827;
 }
 
+/* Enhanced contrast for dark backgrounds */
+.text-on-dark {
+  color: var(--bright-white);
+}
+
+.text-on-dark-secondary {
+  color: var(--pale-blue);
+}
+
+.text-on-dark-muted {
+  color: var(--warm-glow);
+}
+
+/* Ensure good contrast for all text elements */
 .text-deep-blue {
   color: var(--deep-blue);
 }
 
-.text-coral {
-  color: var(--coral);
+.text-dark-teal {
+  color: var(--dark-teal);
 }
 
-.text-silver {
-  color: var(--slate);
+.text-charcoal {
+  color: var(--charcoal);
 }
 
-.text-red-500 {
-  color: #ef4444;
+.text-bright-white {
+  color: var(--bright-white);
 }
 
-.text-green-600 {
-  color: #16a34a;
+.text-pale-blue {
+  color: var(--pale-blue);
+}
+
+.text-warm-glow {
+  color: var(--warm-glow);
+}
+
+.text-accent-red {
+  color: var(--accent-red);
 }
 
 .border-gray-100 {
@@ -624,49 +646,52 @@ input[type="email"]::placeholder {
   color: #9ca3af;
 }
 
-/* Button styles */
-button {
-  width: 100%;
-  padding: 1rem 2rem;
-  border-radius: 0.75rem;
-  font-size: 1.125rem;
-  font-weight: 600;
-  transition: all 0.2s ease;
-  cursor: pointer;
-  border: none;
-}
-
-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: none;
-}
-
-/* Primary button - Updated to new color scheme */
+/* Button styles with enhanced contrast */
 .btn-primary {
-  background: linear-gradient(to right, var(--deep-blue), var(--coral));
-  color: white;
+  background: var(--bright-white);
+  color: var(--deep-blue);
+  border: 2px solid var(--bright-white);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
 }
 
 .btn-primary:hover {
-  box-shadow: 0 10px 15px -3px rgba(30, 58, 138, 0.2), 0 4px 6px -2px rgba(249, 115, 22, 0.15);
+  background: var(--pale-blue);
+  border-color: var(--pale-blue);
+  color: var(--deep-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(248, 250, 252, 0.3);
 }
 
-/* Secondary button - Updated to new color scheme */
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.95);
-  color: var(--deep-blue);
-  border: 2px solid rgba(255, 255, 255, 0.8);
+  background: rgba(248, 250, 252, 0.1);
+  color: var(--bright-white);
+  border: 2px solid rgba(248, 250, 252, 0.3);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 1);
-  color: var(--deep-blue);
-  border-color: rgba(255, 255, 255, 1);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  background: rgba(248, 250, 252, 0.2);
+  border-color: var(--pale-blue);
+  color: var(--pale-blue);
   transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(248, 250, 252, 0.2);
 }
 
 /* Icon container - Updated to new color scheme */

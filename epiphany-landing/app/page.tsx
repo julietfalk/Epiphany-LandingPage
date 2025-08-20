@@ -132,10 +132,10 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="font-headline text-3xl sm:text-4xl text-deep-blue mb-6 tracking-wide">
+              <h2 className="font-headline text-3xl sm:text-4xl text-bright-white mb-6 tracking-wide">
                 Epiphany in Action
               </h2>
-              <p className="text-slate text-lg max-w-2xl mx-auto font-light">
+              <p className="text-pale-blue text-lg max-w-2xl mx-auto font-light">
                 Experience the flow state that Epiphany helps you achieve.
               </p>
             </motion.div>
@@ -178,7 +178,7 @@ export default function Home() {
               
               {/* Video caption */}
               <div className="text-center mt-8">
-                <p className="text-slate text-sm font-medium">
+                <p className="text-pale-blue text-sm font-medium">
                   Epiphany vibe
                 </p>
               </div>
