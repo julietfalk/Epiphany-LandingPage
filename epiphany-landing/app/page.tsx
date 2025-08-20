@@ -138,10 +138,10 @@ export default function Home() {
               className="text-center mb-16"
             >
               <h2 className="font-headline text-3xl sm:text-4xl text-deep-blue mb-6 tracking-wide">
-                See Epiphany in Action
+                Epiphany in Action
               </h2>
               <p className="text-slate text-lg max-w-2xl mx-auto font-light">
-                Watch how the headset and AI browser work together to create your perfect flow state.
+                Experience the flow state that Epiphany helps you achieve.
               </p>
             </motion.div>
             
@@ -152,8 +152,8 @@ export default function Home() {
               viewport={{ once: true }}
               className="relative"
             >
-              {/* Video Container with elegant border and shadow */}
-              <div className="relative max-w-4xl mx-auto">
+              {/* Video Container with elegant border and shadow - smaller size */}
+              <div className="relative max-w-2xl mx-auto">
                 <div className="absolute inset-0 bg-gradient-to-r from-deep-blue via-silver to-coral rounded-3xl opacity-20 blur-xl transform scale-105"></div>
                 <div className="relative bg-white rounded-3xl p-2 shadow-2xl">
                   <div className="relative overflow-hidden rounded-2xl bg-black">
@@ -184,7 +184,7 @@ export default function Home() {
               {/* Video caption */}
               <div className="text-center mt-8">
                 <p className="text-slate text-sm font-medium">
-                  Beta product demo
+                  Epiphany vibe
                 </p>
               </div>
             </motion.div>
