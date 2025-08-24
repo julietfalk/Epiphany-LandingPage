@@ -6,7 +6,7 @@ export async function sendWelcomeEmail(email: string) {
   try {
     const msg = {
       to: email,
-      from: process.env.FROM_EMAIL || 'julietf@stanford.edu',
+      from: process.env.FROM_EMAIL || 'epiphanymessage@gmail.com',
       subject: 'Welcome to the Epiphany Waitlist! 🚀',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -54,8 +54,8 @@ export async function sendWelcomeEmail(email: string) {
 export async function sendAdminNotification(email: string) {
   try {
     const msg = {
-      to: process.env.ADMIN_EMAIL || 'julietf@stanford.edu',
-      from: process.env.FROM_EMAIL || 'julietf@stanford.edu',
+      to: process.env.ADMIN_EMAIL || 'epiphanymessage@gmail.com',
+      from: process.env.FROM_EMAIL || 'epiphanymessage@gmail.com',
       subject: 'New Epiphany Waitlist Signup! 🎉',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
