@@ -27,7 +27,11 @@ export async function POST(request: NextRequest) {
     });
 
     // Store subscriber in Supabase database
-    const dbResult = await addSubscriber(validatedData.email, userAgent, ipAddress);
+    const dbResult = await addSubscriber(
+      validatedData.email,
+      userAgent ?? undefined,
+      ipAddress ?? undefined
+    );
     if (!dbResult.success) {
       console.error('Failed to store subscriber in database:', dbResult.error);
       // Continue anyway - don't fail the subscription
