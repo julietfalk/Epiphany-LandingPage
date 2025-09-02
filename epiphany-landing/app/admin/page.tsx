@@ -31,7 +31,7 @@ export default function AdminDashboard() {
       } else {
         setError(subscribersResult.error || 'Failed to load subscribers');
       }
-    } catch (err) {
+    } catch {
       setError('An error occurred while loading data');
     } finally {
       setLoading(false);
@@ -93,7 +93,7 @@ export default function AdminDashboard() {
             </p>
           </div>
           <div className="bg-white rounded-lg shadow p-6">
-            <h3 className="text-lg font-medium text-gray-900">Today's Signups</h3>
+            <h3 className="text-lg font-medium text-gray-900">Today&apos;s Signups</h3>
             <p className="text-3xl font-bold text-purple-600">
               {subscribers.filter(s => {
                 const today = new Date().toDateString();

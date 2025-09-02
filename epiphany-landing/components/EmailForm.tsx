@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CheckCircle, AlertCircle } from 'lucide-react';
+import { AlertCircle } from 'lucide-react';
 
 const emailSchema = z.object({
   email: z.string().email('Please enter a valid email address'),
@@ -73,7 +73,7 @@ export default function EmailForm({ variant = 'primary', className = '' }: Email
 
       if (response.ok) {
         setSubmitStatus('success');
-        setSubmitMessage('You\'re on the list! We\'ll be in touch soon.');
+        setSubmitMessage('You\'re on the list! We\u2019ll be in touch soon.');
         setIsSubscribed(true); // Update shared state
         reset();
       } else {
