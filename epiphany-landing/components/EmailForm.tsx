@@ -108,7 +108,7 @@ export default function EmailForm({ variant = 'primary', className = '' }: Email
             Welcome to Epiphany! 🎉
           </h3>
           <p className="text-lg text-white opacity-90 max-w-md mx-auto">
-            You're now on the waitlist. Check your email for confirmation!
+            You&apos;re now on the waitlist. Check your email for confirmation!
           </p>
         </div>
       </div>
