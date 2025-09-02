@@ -21,7 +21,7 @@ export default function AdminDashboard() {
       // Get subscriber count
       const countResult = await getSubscriberCount();
       if (countResult.success) {
-        setCount(countResult.count);
+        setCount(countResult.count ?? 0);
       }
       
       // Get all subscribers
