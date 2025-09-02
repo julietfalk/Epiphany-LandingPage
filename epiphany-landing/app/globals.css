@@ -1184,7 +1184,7 @@ input[type="email"]::placeholder {
 
 /* Email form text visibility */
 input[type="email"] {
-  color: white;
+  color: #111827;
 }
 
 input[type="email"]::placeholder {
