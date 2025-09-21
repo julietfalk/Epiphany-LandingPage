@@ -11,7 +11,9 @@ export default function ShieldPage() {
         <nav className="nav-header">
           <div className="nav-container">
             <div className="nav-left">
-              <h1 className="epiphany-brand-nav">Epiphany</h1>
+              <a href="/" className="epiphany-brand-nav-link">
+                <h1 className="epiphany-brand-nav">Epiphany</h1>
+              </a>
             </div>
             <div className="nav-right">
               <a href="/" className="nav-link">Home</a>

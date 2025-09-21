@@ -2005,6 +2005,16 @@ body {
 }
 
 /* Epiphany brand in navigation - Updated from Figma */
+.epiphany-brand-nav-link {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s ease;
+}
+
+.epiphany-brand-nav-link:hover {
+  opacity: 0.8;
+}
+
 .epiphany-brand-nav {
   color: #FFF;
   font-family: "FONTSPRING DEMO - The Seasons", serif;
