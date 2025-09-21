@@ -3,6 +3,9 @@
 /* The Seasons font with splice effect */
 @import url('https://fonts.googleapis.com/css2?family=The+Seasons:wght@400&display=swap');
 
+/* Manrope font for body text */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap');
+
 /* Section title styling with The Seasons font */
 .section-title {
   font-family: 'The Seasons', serif;
@@ -17,16 +20,237 @@
 
 
 
-/* Hero title specific styling */
+/* Hero header container - Updated from Figma */
+.hero-header {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Hero title specific styling - Responsive to prevent overflow */
 .hero-title {
-  font-family: 'The Seasons', serif;
-  font-weight: 400;
-  font-size: 4rem;
-  line-height: 1.1;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-family: "FONTSPRING DEMO - The Seasons", serif;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 80px; /* 133.333% */
+  font-style: normal;
+  color: #FFF;
   position: relative;
   display: inline-block;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .hero-title {
+    white-space: normal;
+    font-size: 50px;
+    line-height: 60px;
+  }
+}
+
+/* Hero section - Updated from Figma */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-background-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #2a3a4a 0%, #0D1C31 30%, #0D1C31 100%);
+  opacity: 1;
+}
+
+/* Hero content layout - Moved down to avoid nav header */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 80px;
+}
+
+.hero-form-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Go with the Flow button - Updated from close-up image */
+.go-with-flow-container {
+  margin-bottom: 30px;
+}
+
+.go-with-flow-button {
+  display: inline-flex;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 60px;
+  border: 1px solid #9ca3af;
+  background: transparent;
+  color: #FFF;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.02em;
+}
+
+.go-with-flow-button:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Email form container - Fixed layout */
+.email-form-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 12px;
+}
+
+.email-form-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.email-input-wrapper {
+  flex: 1;
+}
+
+.email-input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #4A90E2;
+  background: #1A3255;
+  color: #FFF !important;
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4;
+  transition: border-color 0.2s ease;
+}
+
+.email-input:focus {
+  outline: none;
+  border-color: #60A5FA;
+  color: #FFF !important;
+}
+
+.email-input:not(:placeholder-shown) {
+  color: #FFF !important;
+}
+
+.email-input::placeholder {
+  color: #9F9F9F !important;
+  opacity: 1 !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+
+.email-input.border-error {
+  border-color: #ff6b6b;
+}
+
+/* Join waitlist button - Fixed to be on the right */
+.join-waitlist-button-side {
+  display: flex;
+  padding: 14px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 12px;
+  background: linear-gradient(94deg, #FFF 0.36%, #B4B4B4 50%, #E8E7E7 74.82%, #BDBDBD 99.64%);
+  color: #000;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 140px;
+}
+
+.join-waitlist-button-side:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.join-waitlist-button-side:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Hero subheader - Single line, centered below heading */
+.hero-subheader {
+  color: rgba(255, 255, 255, 0.54);
+  text-align: center;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0 auto;
+  width: 100%;
+  white-space: nowrap;
+}
+
+/* Responsive hero title and subheader */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 40px;
+    line-height: 50px;
+    white-space: normal;
+  }
+  
+  .hero-subheader {
+    font-size: 18px;
+    white-space: normal;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  
+  .hero-subheader {
+    font-size: 16px;
+  }
 }
 
 /* Explainer text box - same color as button */
@@ -68,6 +292,8 @@ body {
   --metal-to: #aeb4bd;
   
   /* New color scheme based on urban cityscape background */
+  --hero-background: #0D1C31;  /* Hero background from Figma */
+  --text-white: #FFF;          /* White text from Figma */
   --deep-blue: #0f172a;        /* Deep night sky blue */
   --dark-teal: #0f4c75;        /* Dark teal from building facades */
   --charcoal: #1e293b;         /* Charcoal grey from structures */
@@ -78,6 +304,12 @@ body {
   --accent-red: #dc2626;       /* Distant red/orange lights */
   --urban-blue: #1e40af;       /* Urban blue tones */
   --slate: #475569;            /* Slate for text */
+  
+  /* Spacing variables from Figma */
+  --sds-size-space-300: 12px;
+  --sds-size-space-400: 16px;
+  --sds-size-radius-200: 8px;
+  --sds-size-stroke-border: 1px;
 }
 
 /* Typography */
@@ -666,26 +898,1288 @@ body {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-/* Input styles */
-input[type="email"] {
+/* Email form container - Updated from Figma */
+.email-form-container {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+  align-self: stretch;
+  flex-direction: column;
+}
+
+/* Email input container */
+.email-input-container {
   width: 100%;
-  padding: 1rem 1.5rem;
-  border: 2px solid var(--metallic-silver);
-  border-radius: 0.75rem;
-  font-size: 1.125rem;
-  font-weight: 700;
-  background: white;
-  color: #111827;
+  max-width: 368px;
+}
+
+/* Email input - Updated from Figma */
+.email-input {
+  display: flex;
+  width: 100%;
+  padding: var(--sds-size-space-300) var(--sds-size-space-400);
+  align-items: center;
+  border-radius: var(--sds-size-radius-200);
+  border: var(--sds-size-stroke-border) solid #2B5999;
+  background: #1A3255;
+  color: #FFF !important;
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%; /* 14px */
   transition: border-color 0.2s ease;
 }
 
-input[type="email"]:focus {
+.email-input:focus {
   outline: none;
-  border-color: var(--deep-blue);
+  border-color: #4A90E2;
+  color: #FFF !important;
 }
 
-input[type="email"]::placeholder {
-  color: #9ca3af;
+.email-input:not(:placeholder-shown) {
+  color: #FFF !important;
+}
+
+.email-input::placeholder {
+  color: #9F9F9F !important;
+  opacity: 1 !important;
+}
+
+.email-input.border-error {
+  border-color: #ff6b6b;
+}
+
+/* Join waitlist button - Updated from Figma */
+.join-waitlist-button {
+  display: flex;
+  padding: 9px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  background: linear-gradient(94deg, #FFF 0.36%, #B4B4B4 50%, #E8E7E7 74.82%, #BDBDBD 99.64%);
+  color: #000;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.join-waitlist-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.join-waitlist-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Privacy text - Updated to match image exactly */
+.privacy-text {
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0;
+  width: 100%;
+}
+
+/* Fact cards container - Updated from Figma */
+.fact-cards-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 200px; /* Ensure it has height */
+  padding: 20px; /* Add padding */
+}
+
+/* Animated fact cards container */
+.fact-cards-stack {
+  position: relative;
+  width: 300px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/* Fact card animated - ensure visibility */
+.fact-card-animated {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Fact card - Updated from Figma */
+.fact-card {
+  display: flex;
+  width: 260px;
+  height: 90px;
+  padding: 12px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  border: 1px solid #576265;
+  background: #183359;
+  color: rgba(255, 255, 255, 0.54);
+  text-align: center;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  justify-content: center;
+  margin: 10px; /* Add some margin for visibility */
+  align-items: center;
+}
+
+/* Small fact card - Updated from Figma */
+.fact-card-small {
+  width: 244px;
+  height: 90px;
+}
+
+.fact-card p {
+  margin: 0;
+  text-align: center;
+}
+
+/* How It Works Section - Updated from Figma */
+.how-it-works-container {
+  display: flex;
+  width: 1120px;
+  max-width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.how-it-works-title {
+  align-self: stretch;
+  color: #181818;
+  text-align: center;
+  font-family: "FONTSPRING DEMO - The Seasons";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+}
+
+.how-it-works-steps {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 60px;
+  align-self: stretch;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.how-it-works-step {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  gap: 80px;
+  padding: 0 10px;
+}
+
+.step-content {
+  display: flex;
+  width: 370px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+  flex-shrink: 0;
+}
+
+.step-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-title {
+  align-self: stretch;
+  color: #000;
+  font-family: Manrope;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+}
+
+.step-description {
+  align-self: stretch;
+  color: #000;
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
+
+.step-button {
+  display: flex;
+  padding: 9px 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  background: #181818;
+  color: #FFF;
+  font-family: Manrope;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-decoration: none;
+  text-align: center;
+}
+
+.step-button:hover {
+  background: #374151;
+  color: #FFF;
+  text-decoration: none;
+}
+
+    .step-illustration {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .step-illustration img,
+    .step-illustration svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Step 1 illustration */
+    .how-it-works-step:nth-child(1) .step-illustration {
+      width: 284.123px;
+      height: 241.554px;
+    }
+
+    /* Step 2 illustration */
+    .how-it-works-step:nth-child(2) .step-illustration {
+      width: 238.07px;
+      height: 250px;
+    }
+
+    /* Step 3 illustration */
+    .how-it-works-step:nth-child(3) .step-illustration {
+      width: 238.07px;
+      height: 250px;
+    }
+
+/* Pre-Order CTA Section */
+.pre-order-cta-section {
+  width: 1440px;
+  max-width: 100%;
+  height: 522px;
+  background: #0D1C31;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.54);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.pre-order-cta-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.pre-order-cta-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  flex: 1;
+  max-width: 50%;
+  padding-left: 40px;
+}
+
+.pre-order-cta-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  max-width: 50%;
+}
+
+.pre-order-cta-illustration {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  object-fit: contain;
+}
+
+.pre-order-cta-title {
+  color: #FFF;
+  font-family: "FONTSPRING DEMO - The Seasons";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+  width: 436px;
+  max-width: 100%;
+}
+
+.pre-order-cta-tagline {
+  color: rgba(255, 255, 255, 0.54);
+  font-family: Manrope;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0 0 24px 0;
+  width: 436px;
+  max-width: 100%;
+}
+
+.pre-order-cta-form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  align-self: stretch;
+  margin-bottom: 16px;
+}
+
+.pre-order-cta-input {
+  display: flex;
+  padding: 12px 16px;
+  align-items: center;
+  flex: 1 0 0;
+  border-radius: 8px;
+  background: #484848;
+  color: #FFF !important;
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  border: none;
+  outline: none;
+}
+
+.pre-order-cta-input::placeholder {
+  color: #9F9F9F !important;
+  opacity: 1 !important;
+}
+
+.pre-order-cta-input:focus {
+  background: #5a5a5a;
+  color: #FFF !important;
+}
+
+.pre-order-cta-input:not(:placeholder-shown) {
+  color: #FFF !important;
+}
+
+.pre-order-cta-button {
+  display: flex;
+  padding: 9px 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  background: linear-gradient(94deg, #FFF 0.36%, #B4B4B4 50%, #E8E7E7 74.82%, #BDBDBD 99.64%);
+  color: #0D1C31;
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+  white-space: nowrap;
+}
+
+.pre-order-cta-button:hover {
+  transform: translateY(-2px);
+}
+
+.pre-order-cta-privacy {
+  color: rgba(255, 255, 255, 0.54);
+  text-align: center;
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
+
+/* Responsive Pre-Order CTA */
+@media (max-width: 768px) {
+  .pre-order-cta-section {
+    width: 100%;
+    height: auto;
+    padding: 60px 0;
+  }
+
+  .pre-order-cta-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .pre-order-cta-left {
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .pre-order-cta-right {
+    max-width: 100%;
+  }
+
+  .pre-order-cta-title {
+    width: 100%;
+    font-size: 32px;
+  }
+
+  .pre-order-cta-tagline {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .pre-order-cta-form {
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .pre-order-cta-button {
+    width: 100%;
+  }
+
+  .pre-order-cta-illustration {
+    max-width: 300px;
+  }
+}
+
+/* Footer Section */
+.footer-section {
+  width: 1440px;
+  max-width: 100%;
+  height: 285px;
+  background: #0D1C31;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.footer-container {
+  width: 1240px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px 60px;
+}
+
+.footer-top {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-brand {
+  display: flex;
+  width: 136px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.footer-brand-title {
+  color: #FFF;
+  font-family: "FONTSPRING DEMO - The Seasons";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+}
+
+.footer-brand-tagline {
+  color: #FFF;
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  width: 295px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.footer-link {
+  color: #FFF;
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.footer-link:hover {
+  opacity: 0.8;
+}
+
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.54);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.footer-copyright {
+  color: #FFF;
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+}
+
+.footer-legal {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-legal-link {
+  color: rgba(255, 255, 255, 0.54);
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.footer-legal-link:hover {
+  opacity: 0.8;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer-section {
+    width: 100%;
+    height: auto;
+    padding: 40px 0;
+  }
+
+  .footer-container {
+    width: 100%;
+    gap: 24px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-brand {
+    width: 100%;
+    align-items: center;
+  }
+
+  .footer-links {
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .footer-legal {
+    gap: 24px;
+  }
+}
+
+/* About Us Page Styles */
+.about-hero-section {
+  background: #0D1C31;
+  padding: 140px 0 120px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+.about-hero-container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 80px;
+}
+
+.about-hero-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  width: 100%;
+}
+
+.about-hero-content {
+  display: flex;
+  width: 520px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  align-self: stretch;
+  flex-shrink: 0;
+}
+
+.about-hero-title {
+  color: #FFF;
+  font-family: "FONTSPRING DEMO - The Seasons";
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 80px; /* 133.333% */
+  margin: 0;
+  align-self: stretch;
+}
+
+.about-hero-description {
+  color: rgba(255, 255, 255, 0.54);
+  font-family: Manrope;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  align-self: stretch;
+}
+
+.about-hero-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.about-people-illustration {
+  width: 450px;
+  height: 310px;
+  flex-shrink: 0;
+  object-fit: contain;
+  margin-left: -80px;
+}
+
+.about-hero-email-form {
+  margin-top: 40px;
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Benefits Section */
+.benefits-section {
+  padding: 80px 0;
+  background: #F4FAFE;
+}
+
+.benefits-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.benefits-title {
+  align-self: stretch;
+  color: #181818;
+  text-align: center;
+  font-family: "FONTSPRING DEMO - The Seasons";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+}
+
+.benefits-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.benefits-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.benefits-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.benefits-text {
+  align-self: stretch;
+  color: #000;
+  text-align: center;
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 700px;
+}
+
+.meet-team-section {
+  padding: 80px 0;
+  background: #FFF;
+}
+
+.meet-team-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.meet-team-title {
+  color: #181818;
+  font-family: "FONTSPRING DEMO - The Seasons";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.team-card {
+  text-align: center;
+  padding: 20px;
+}
+
+.team-photo {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f5f5f5;
+  position: relative;
+}
+
+.team-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 12px 12px 8px 12px;
+  color: #FFF;
+}
+
+.team-name {
+  color: #FFF;
+  font-family: Manrope;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0 0 2px 0;
+  text-align: left;
+}
+
+.team-role {
+  color: #FFF;
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0 0 2px 0;
+  text-align: left;
+}
+
+.team-bio {
+  color: #FFF;
+  font-family: Manrope;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  text-align: left;
+}
+
+.nav-link.active {
+  color: #3887FE;
+}
+
+/* Responsive About Us */
+@media (max-width: 768px) {
+  .about-hero-section {
+    padding: 120px 0 100px 0;
+    min-height: auto;
+  }
+
+  .about-hero-container,
+  .meet-team-container {
+    padding: 0 40px;
+  }
+
+  .about-hero-layout {
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-hero-content {
+    width: 100%;
+    max-width: 520px;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .about-hero-title {
+    font-size: 48px;
+    line-height: 60px;
+    text-align: center;
+  }
+
+  .about-hero-description {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .about-people-illustration {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    margin-left: 0;
+  }
+
+  .about-hero-email-form {
+    max-width: 100%;
+    margin-top: 32px;
+  }
+
+  .meet-team-title {
+    font-size: 32px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .team-photo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .team-overlay {
+    padding: 10px 10px 6px 10px;
+  }
+
+  .team-name {
+    font-size: 16px;
+  }
+
+  .team-role {
+    font-size: 12px;
+  }
+
+  .team-bio {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero-section {
+    padding: 100px 0 80px 0;
+  }
+
+  .about-hero-container {
+    padding: 0 20px;
+  }
+
+  .about-hero-layout {
+    gap: 50px;
+  }
+
+  .about-hero-content {
+    gap: 16px;
+  }
+
+  .about-hero-title {
+    font-size: 36px;
+    line-height: 48px;
+  }
+
+  .about-hero-description {
+    font-size: 16px;
+  }
+
+  .about-people-illustration {
+    max-width: 280px;
+  }
+
+  .about-hero-email-form {
+    margin-top: 24px;
+  }
+
+  .benefits-container {
+    padding: 0 20px;
+  }
+
+  .benefits-title {
+    font-size: 32px;
+  }
+
+  .benefits-text {
+    font-size: 14px;
+  }
+
+  .benefits-text-container {
+    margin-top: 30px;
+  }
+}
+
+/* Responsive How It Works */
+@media (max-width: 768px) {
+  .how-it-works-container {
+    width: 100%;
+    gap: 40px;
+    padding: 0 20px;
+  }
+
+  .how-it-works-steps {
+    max-width: 100%;
+    padding: 0 5px;
+  }
+
+  .how-it-works-title {
+    font-size: 32px;
+  }
+
+  .how-it-works-step {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+    padding: 0 5px;
+  }
+
+  .step-content {
+    width: 100%;
+    max-width: 370px;
+    align-items: center;
+  }
+
+  .step-illustration {
+    width: 200px !important;
+    height: 150px !important;
+  }
+
+  .step-illustration img,
+  .step-illustration svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+/* Navigation Header - Updated from Figma */
+.nav-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: transparent;
+  backdrop-filter: blur(10px);
+}
+
+.nav-container {
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  padding: 20px 100px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.nav-left {
+  flex: 1;
+}
+
+.nav-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+}
+
+/* Epiphany brand in navigation - Updated from Figma */
+.epiphany-brand-nav {
+  color: #FFF;
+  font-family: "FONTSPRING DEMO - The Seasons", serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.epiphany-brand-nav:hover {
+  opacity: 0.8;
+}
+
+/* Navigation links - Updated from Figma */
+.nav-link {
+  color: #FFF;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.nav-link:hover {
+  opacity: 0.8;
+}
+
+/* Waitlist button in navigation - Updated from Figma */
+.waitlist-button-nav {
+  display: flex;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 12px;
+  background: linear-gradient(94deg, #FFF 0.36%, #B4B4B4 50%, #E8E7E7 74.82%, #BDBDBD 99.64%);
+  color: #181818;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.waitlist-button-nav:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Epiphany branding - Top left (old positioning) */
+.epiphany-brand {
+  color: #FFF;
+  font-family: "FONTSPRING DEMO - The Seasons", serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Scroll down button - Centered at bottom */
+.scroll-down-container {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.scroll-down-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: #FFF;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 8px;
+  transform: translateX(-20px);
+}
+
+.scroll-down-button:hover {
+  transform: translateX(-20px) translateY(-2px);
+  opacity: 0.8;
+}
+
+.scroll-down-button svg {
+  transition: transform 0.3s ease;
+}
+
+.scroll-down-button:hover svg {
+  transform: translateY(2px);
+}
+
+/* Responsive email form */
+@media (max-width: 768px) {
+  .email-form-side-by-side {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .join-waitlist-button-side {
+    width: 100%;
+  }
+}
+
+/* Responsive navigation */
+@media (max-width: 1024px) {
+  .nav-container {
+    padding: 20px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 20px 20px;
+  }
+  
+  .nav-center {
+    gap: 15px;
+  }
+  
+  .epiphany-brand-nav {
+    font-size: 24px;
+  }
+  
+  .nav-link {
+    font-size: 14px;
+  }
+  
+  .waitlist-button-nav {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-center {
+    gap: 10px;
+  }
+  
+  .epiphany-brand-nav {
+    font-size: 20px;
+  }
+  
+  .nav-link {
+    font-size: 12px;
+  }
+  
+  .waitlist-button-nav {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
 }
 
 /* Button styles with better contrast */
@@ -1184,11 +2678,12 @@ input[type="email"]::placeholder {
 
 /* Email form text visibility */
 input[type="email"] {
-  color: #111827;
+  color: #FFF !important;
 }
 
 input[type="email"]::placeholder {
-  color: rgba(0, 0, 0, 0.7);
+  color: #9F9F9F !important;
+  opacity: 1 !important;
 }
 
 /* Privacy text below email form */

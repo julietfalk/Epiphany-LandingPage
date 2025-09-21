@@ -7,11 +7,11 @@ export async function sendWelcomeEmail(email: string) {
     const { data, error } = await resend.emails.send({
       from: process.env.FROM_EMAIL || 'noreply@epiphany.com',
       to: [email],
-      subject: 'Welcome to the Epiphany Waitlist! 🚀',
+      subject: 'Welcome to the Epiphany Waitlist',
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-          <h1 style="color: #1e3a8a; text-align: center; margin-bottom: 30px;">
-            Welcome to Epiphany! 🎯
+        <div style="font-family: 'Manrope', sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+          <h1 style="color: #1e3a8a; text-align: center; margin-bottom: 30px; font-family: 'FONTSPRING DEMO - The Seasons'; font-weight: 700;">
+            Welcome to Epiphany
           </h1>
           
           <p style="font-size: 18px; line-height: 1.6; color: #333; margin-bottom: 20px;">
@@ -23,10 +23,10 @@ export async function sendWelcomeEmail(email: string) {
               What's Next?
             </h2>
             <ul style="color: white; line-height: 1.8;">
-              <li>🚀 Early access to pre-orders</li>
-              <li>💡 Exclusive product updates</li>
-              <li>🎁 Special launch discounts</li>
-              <li>🔬 Beta testing opportunities</li>
+              <li>Early access to pre-orders</li>
+              <li>Exclusive product updates</li>
+              <li>Special launch discounts</li>
+              <li>Beta testing opportunities</li>
             </ul>
           </div>
           

@@ -104,17 +104,17 @@ export default function EmailForm({ variant = 'primary', className = '' }: Email
       <div className="relative mb-8">
         <div className="absolute inset-0 bg-gradient-to-r from-deep-blue via-silver to-coral rounded-2xl opacity-20 blur-xl transform scale-110"></div>
         <div className="relative bg-gradient-to-r from-deep-blue via-silver to-coral rounded-2xl p-8 shadow-2xl">
-          <h3 className="text-3xl font-headline text-white mb-3 tracking-wide">
-            Welcome to Epiphany! 🎉
+          <h3 className="text-3xl text-white mb-3 tracking-wide" style={{ fontFamily: '"FONTSPRING DEMO - The Seasons"', fontWeight: '700' }}>
+            Welcome to Epiphany
           </h3>
-          <p className="text-lg text-white opacity-90 max-w-md mx-auto">
+          <p className="text-lg text-white opacity-90 max-w-md mx-auto" style={{ fontFamily: 'Manrope, sans-serif' }}>
             You&apos;re now on the waitlist. Check your email for confirmation!
           </p>
         </div>
       </div>
       
       <div className="text-center">
-        <p className="text-slate text-sm font-medium">
+        <p className="text-slate text-sm font-medium" style={{ fontFamily: 'Manrope, sans-serif' }}>
           Early access coming soon
         </p>
       </div>
@@ -127,18 +127,38 @@ export default function EmailForm({ variant = 'primary', className = '' }: Email
   }
 
   return (
-    <div className={`w-full max-w-lg mx-auto ${className}`}>
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-        <div className="relative">
-          <input
-            {...register('email')}
-            type="email"
-            placeholder="Enter your email"
-            className={errors.email ? 'border-coral focus:border-coral' : ''}
-            aria-invalid={errors.email ? 'true' : 'false'}
-            aria-describedby={errors.email ? 'email-error' : undefined}
+    <div className={`w-full max-w-2xl mx-auto ${className}`}>
+      <form onSubmit={handleSubmit(onSubmit)} className="email-form-container">
+        <div className="email-form-row">
+          <div className="email-input-wrapper">
+            <input
+              {...register('email')}
+              type="email"
+              placeholder="Enter your Email"
+              className={`email-input ${errors.email ? 'border-error' : ''}`}
+              aria-invalid={errors.email ? 'true' : 'false'}
+              aria-describedby={errors.email ? 'email-error' : undefined}
+              disabled={isSubmitting}
+            />
+          </div>
+
+          <motion.button
+            type="submit"
             disabled={isSubmitting}
-          />
+            variants={buttonVariants}
+            whileHover="hover"
+            whileTap="tap"
+            className="join-waitlist-button-side"
+          >
+            {isSubmitting ? (
+              <div className="flex items-center justify-center gap-2">
+                <div className="loading-spinner" />
+                Joining...
+              </div>
+            ) : (
+              'Join the Waitlist'
+            )}
+          </motion.button>
         </div>
 
         <AnimatePresence>
@@ -170,26 +190,8 @@ export default function EmailForm({ variant = 'primary', className = '' }: Email
           )}
         </AnimatePresence>
 
-        <motion.button
-          type="submit"
-          disabled={isSubmitting}
-          variants={buttonVariants}
-          whileHover="hover"
-          whileTap="tap"
-          className={variant === 'primary' ? 'btn-primary' : 'btn-secondary'}
-        >
-          {isSubmitting ? (
-            <div className="flex items-center justify-center gap-2">
-              <div className="loading-spinner" />
-              Joining...
-            </div>
-          ) : (
-            'Join the Waitlist'
-          )}
-        </motion.button>
-
-        <p className="text-white text-xs text-center font-light">
-          No spam. Unsubscribe anytime.
+        <p className="privacy-text">
+          Don't worry, We keep your inbox as distraction-free as your mind.
         </p>
       </form>
     </div>
