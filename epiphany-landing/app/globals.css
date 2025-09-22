@@ -31,7 +31,7 @@
 
 /* Hero title specific styling - Responsive to prevent overflow */
 .hero-title {
-  font-family: "FONTSPRING DEMO - The Seasons", serif;
+  font-family: "The Seasons", serif;
   font-weight: 700;
   font-size: 60px;
   line-height: 80px; /* 133.333% */
@@ -272,7 +272,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-weight: 700;
   line-height: 1.6;
   color: #0b0d12;
@@ -314,14 +314,14 @@ body {
 
 /* Typography */
 .font-headline {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 .font-body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-weight: 700;
 }
 
@@ -1076,7 +1076,7 @@ body {
   align-self: stretch;
   color: #181818;
   text-align: center;
-  font-family: "FONTSPRING DEMO - The Seasons";
+  font-family: "The Seasons", serif;
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
@@ -1123,7 +1123,7 @@ body {
 .step-title {
   align-self: stretch;
   color: #000;
-  font-family: Manrope;
+  font-family: 'Manrope', sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
@@ -1134,7 +1134,7 @@ body {
 .step-description {
   align-self: stretch;
   color: #000;
-  font-family: Manrope;
+  font-family: 'Manrope', sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -1151,7 +1151,7 @@ body {
   border-radius: 8px;
   background: #181818;
   color: #FFF;
-  font-family: Manrope;
+  font-family: 'Manrope', sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 700;
@@ -1250,7 +1250,7 @@ body {
 
 .pre-order-cta-title {
   color: #FFF;
-  font-family: "FONTSPRING DEMO - The Seasons";
+  font-family: "The Seasons", serif;
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
@@ -1262,7 +1262,7 @@ body {
 
 .pre-order-cta-tagline {
   color: rgba(255, 255, 255, 0.54);
-  font-family: Manrope;
+  font-family: 'Manrope', sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -1288,7 +1288,7 @@ body {
   border-radius: 8px;
   background: #484848;
   color: #FFF !important;
-  font-family: Manrope;
+  font-family: 'Manrope', sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -1320,7 +1320,7 @@ body {
   border-radius: 8px;
   background: linear-gradient(94deg, #FFF 0.36%, #B4B4B4 50%, #E8E7E7 74.82%, #BDBDBD 99.64%);
   color: #0D1C31;
-  font-family: Manrope;
+  font-family: 'Manrope', sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -1338,7 +1338,7 @@ body {
 .pre-order-cta-privacy {
   color: rgba(255, 255, 255, 0.54);
   text-align: center;
-  font-family: Manrope;
+  font-family: 'Manrope', sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -1434,7 +1434,7 @@ body {
 
 .footer-brand-title {
   color: #FFF;
-  font-family: "FONTSPRING DEMO - The Seasons";
+  font-family: "The Seasons", serif;
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
@@ -1444,7 +1444,7 @@ body {
 
 .footer-brand-tagline {
   color: #FFF;
-  font-family: Manrope;
+  font-family: 'Manrope', sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -1463,7 +1463,7 @@ body {
 
 .footer-link {
   color: #FFF;
-  font-family: Manrope;
+  font-family: 'Manrope', sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -1491,7 +1491,7 @@ body {
 
 .footer-copyright {
   color: #FFF;
-  font-family: Manrope;
+  font-family: 'Manrope', sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -1507,7 +1507,7 @@ body {
 
 .footer-legal-link {
   color: rgba(255, 255, 255, 0.54);
-  font-family: Manrope;
+  font-family: 'Manrope', sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -1600,7 +1600,7 @@ body {
 
 .about-hero-title {
   color: #FFF;
-  font-family: "FONTSPRING DEMO - The Seasons";
+  font-family: "The Seasons", serif;
   font-size: 60px;
   font-style: normal;
   font-weight: 700;
@@ -1611,7 +1611,7 @@ body {
 
 .about-hero-description {
   color: rgba(255, 255, 255, 0.54);
-  font-family: Manrope;
+  font-family: 'Manrope', sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -1657,7 +1657,7 @@ body {
   align-self: stretch;
   color: #181818;
   text-align: center;
-  font-family: "FONTSPRING DEMO - The Seasons";
+  font-family: "The Seasons", serif;
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
@@ -1690,7 +1690,7 @@ body {
   align-self: stretch;
   color: #000;
   text-align: center;
-  font-family: Manrope;
+  font-family: 'Manrope', sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -1712,7 +1712,7 @@ body {
 
 .meet-team-title {
   color: #181818;
-  font-family: "FONTSPRING DEMO - The Seasons";
+  font-family: "The Seasons", serif;
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
@@ -1761,7 +1761,7 @@ body {
 
 .team-name {
   color: #FFF;
-  font-family: Manrope;
+  font-family: 'Manrope', sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -1772,7 +1772,7 @@ body {
 
 .team-role {
   color: #FFF;
-  font-family: Manrope;
+  font-family: 'Manrope', sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -1783,7 +1783,7 @@ body {
 
 .team-bio {
   color: #FFF;
-  font-family: Manrope;
+  font-family: 'Manrope', sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -2017,7 +2017,7 @@ body {
 
 .epiphany-brand-nav {
   color: #FFF;
-  font-family: "FONTSPRING DEMO - The Seasons", serif;
+  font-family: "The Seasons", serif;
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
@@ -2075,7 +2075,7 @@ body {
 /* Epiphany branding - Top left (old positioning) */
 .epiphany-brand {
   color: #FFF;
-  font-family: "FONTSPRING DEMO - The Seasons", serif;
+  font-family: "The Seasons", serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
@@ -2515,7 +2515,7 @@ body {
 }
 
 .feature-card h3 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-weight: 700;
   font-size: 1.5rem;
   line-height: 1.3;

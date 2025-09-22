@@ -10,7 +10,7 @@ export async function sendWelcomeEmail(email: string) {
       subject: 'Welcome to the Epiphany Waitlist',
       html: `
         <div style="font-family: 'Manrope', sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-          <h1 style="color: #1e3a8a; text-align: center; margin-bottom: 30px; font-family: 'FONTSPRING DEMO - The Seasons'; font-weight: 700;">
+          <h1 style="color: #1e3a8a; text-align: center; margin-bottom: 30px; font-family: 'The Seasons', serif; font-weight: 700;">
             Welcome to Epiphany
           </h1>
           

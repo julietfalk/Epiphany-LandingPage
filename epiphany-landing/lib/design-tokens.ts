@@ -21,7 +21,7 @@ export const typography = {
 
   // Hero - Updated from Figma
   heroTitle: {
-    fontFamily: '"FONTSPRING DEMO - The Seasons"',
+    fontFamily: '"The Seasons", serif',
     fontSize: '60px',
     lineHeight: '80px', // 133.333%
     fontWeight: '700',

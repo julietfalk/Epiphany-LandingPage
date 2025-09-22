@@ -104,7 +104,7 @@ export default function EmailForm({ variant = 'primary', className = '' }: Email
       <div className="relative mb-8">
         <div className="absolute inset-0 bg-gradient-to-r from-deep-blue via-silver to-coral rounded-2xl opacity-20 blur-xl transform scale-110"></div>
         <div className="relative bg-gradient-to-r from-deep-blue via-silver to-coral rounded-2xl p-8 shadow-2xl">
-          <h3 className="text-3xl text-white mb-3 tracking-wide" style={{ fontFamily: '"FONTSPRING DEMO - The Seasons"', fontWeight: '700' }}>
+          <h3 className="text-3xl text-white mb-3 tracking-wide" style={{ fontFamily: '"The Seasons", serif', fontWeight: '700' }}>
             Welcome to Epiphany
           </h3>
           <p className="text-lg text-white opacity-90 max-w-md mx-auto" style={{ fontFamily: 'Manrope, sans-serif' }}>
