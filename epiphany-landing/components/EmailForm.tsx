@@ -191,7 +191,7 @@ export default function EmailForm({ variant = 'primary', className = '' }: Email
         </AnimatePresence>
 
         <p className="privacy-text">
-          Don't worry, We keep your inbox as distraction-free as your mind.
+          Don&apos;t worry, We keep your inbox as distraction-free as your mind.
         </p>
       </form>
     </div>

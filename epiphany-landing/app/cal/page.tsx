@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import EmailForm, { SubscriptionProvider } from '@/components/EmailForm';
+import Link from 'next/link';
 
 export default function CalPage() {
   return (
@@ -11,13 +12,13 @@ export default function CalPage() {
         <nav className="nav-header">
           <div className="nav-container">
             <div className="nav-left">
-              <a href="/" className="epiphany-brand-nav-link">
+              <Link href="/" className="epiphany-brand-nav-link">
                 <h1 className="epiphany-brand-nav">Epiphany</h1>
-              </a>
+              </Link>
             </div>
             <div className="nav-right">
-              <a href="/" className="nav-link">Home</a>
-              <a href="/about" className="nav-link">About</a>
+              <Link href="/" className="nav-link">Home</Link>
+              <Link href="/about" className="nav-link">About</Link>
               <button 
                 className="waitlist-button-nav"
                 onClick={() => {
@@ -127,7 +128,7 @@ export default function CalPage() {
                 <button className="pre-order-cta-button">Join the Waitlist</button>
               </div>
               
-              <p className="pre-order-cta-privacy">Don't worry, We keep your inbox as distraction-free as your mind.</p>
+              <p className="pre-order-cta-privacy">Don&apos;t worry, We keep your inbox as distraction-free as your mind.</p>
             </div>
             
             <div className="pre-order-cta-right">

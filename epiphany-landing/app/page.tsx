@@ -6,6 +6,7 @@ import { Brain, Shield, Radar } from 'lucide-react';
 import EmailForm, { SubscriptionProvider } from '@/components/EmailForm';
 import FeatureCard from '@/components/FeatureCard';
 import AnimatedFactCards from '@/components/AnimatedFactCards';
+import Link from 'next/link';
 
 const features = [
   {
@@ -74,13 +75,13 @@ export default function Home() {
         <nav className="nav-header">
           <div className="nav-container">
             <div className="nav-left">
-              <a href="/" className="epiphany-brand-nav-link">
+              <Link href="/" className="epiphany-brand-nav-link">
                 <h1 className="epiphany-brand-nav">Epiphany</h1>
-              </a>
+              </Link>
             </div>
             <div className="nav-right">
-              <a href="/" className="nav-link">Home</a>
-              <a href="/about" className="nav-link">About</a>
+              <Link href="/" className="nav-link">Home</Link>
+              <Link href="/about" className="nav-link">About</Link>
               <button 
                 className="waitlist-button-nav"
                 onClick={() => {
@@ -288,7 +289,7 @@ export default function Home() {
                 <button className="pre-order-cta-button">Join the Waitlist</button>
               </div>
               
-              <p className="pre-order-cta-privacy">Don't worry, We keep your inbox as distraction-free as your mind.</p>
+              <p className="pre-order-cta-privacy">Don&apos;t worry, We keep your inbox as distraction-free as your mind.</p>
             </div>
             
             <div className="pre-order-cta-right">
