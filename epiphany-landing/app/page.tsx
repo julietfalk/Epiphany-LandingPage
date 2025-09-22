@@ -1,5 +1,6 @@
 'use client';
 
+// Force deployment update - styles should now be live
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Brain, Shield, Radar } from 'lucide-react';
