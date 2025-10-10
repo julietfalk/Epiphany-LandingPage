@@ -61,6 +61,7 @@ export default function EmailForm({ variant = 'primary', className = '' }: Email
   const onSubmit = async (data: EmailFormData) => {
     setIsSubmitting(true);
     setSubmitStatus('idle');
+    setSubmitMessage('');
 
     try {
       const response = await fetch('/api/subscribe', {
@@ -71,17 +72,21 @@ export default function EmailForm({ variant = 'primary', className = '' }: Email
         body: JSON.stringify(data),
       });
 
+      const result = await response.json();
+
       if (response.ok) {
         setSubmitStatus('success');
         setSubmitMessage('You\'re on the list! We\u2019ll be in touch soon.');
         setIsSubscribed(true); // Update shared state
         reset();
       } else {
-        throw new Error('Subscription failed');
+        setSubmitStatus('error');
+        setSubmitMessage(result.message || 'Something went wrong. Please try again.');
       }
-    } catch {
+    } catch (error) {
+      console.error('Email submission error:', error);
       setSubmitStatus('error');
-      setSubmitMessage('Something went wrong. Please try again.');
+      setSubmitMessage('Network error. Please check your connection and try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -139,6 +144,10 @@ export default function EmailForm({ variant = 'primary', className = '' }: Email
               aria-invalid={errors.email ? 'true' : 'false'}
               aria-describedby={errors.email ? 'email-error' : undefined}
               disabled={isSubmitting}
+              autoComplete="email"
+              autoCapitalize="none"
+              autoCorrect="off"
+              spellCheck="false"
             />
           </div>
 
@@ -153,7 +162,7 @@ export default function EmailForm({ variant = 'primary', className = '' }: Email
             {isSubmitting ? (
               <div className="flex items-center justify-center gap-2">
                 <div className="loading-spinner" />
-                Joining...
+                <span>Joining...</span>
               </div>
             ) : (
               'Join the Waitlist'
