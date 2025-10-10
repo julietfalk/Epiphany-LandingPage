@@ -79,10 +79,15 @@ export default function AdminDashboard() {
   // Password protection screen
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-center justify-center p-4">
+        <div className="max-w-md w-full bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
           <div className="text-center mb-8">
-            <h1 className="text-2xl font-bold text-gray-900 mb-2">Epiphany Admin</h1>
+            <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-white text-2xl font-bold">E</span>
+            </div>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2" style={{ fontFamily: '"The Seasons", serif' }}>
+              Epiphany Admin
+            </h1>
             <p className="text-gray-600">Enter password to access dashboard</p>
           </div>
           
@@ -96,21 +101,21 @@ export default function AdminDashboard() {
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
                 placeholder="Enter admin password"
                 required
               />
             </div>
             
             {passwordError && (
-              <div className="text-red-600 text-sm text-center">
+              <div className="bg-red-50 border border-red-200 text-red-600 text-sm text-center py-3 px-4 rounded-xl">
                 {passwordError}
               </div>
             )}
             
             <button
               type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors"
+              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg"
             >
               Access Dashboard
             </button>
@@ -122,109 +127,156 @@ export default function AdminDashboard() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading subscriber data...</p>
+          <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="animate-spin rounded-full h-8 w-8 border-2 border-white border-t-transparent"></div>
+          </div>
+          <p className="text-gray-600 font-medium">Loading subscriber data...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Epiphany Admin Dashboard</h1>
-          <p className="mt-2 text-gray-600">Manage your waitlist subscribers</p>
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
+              <span className="text-white text-xl font-bold">E</span>
+            </div>
+            <div>
+              <h1 className="text-4xl font-bold text-gray-900" style={{ fontFamily: '"The Seasons", serif' }}>
+                Epiphany Admin Dashboard
+              </h1>
+              <p className="mt-2 text-gray-600 text-lg">Manage your waitlist subscribers</p>
+            </div>
+          </div>
         </div>
 
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div className="bg-white rounded-lg shadow p-6">
-            <h3 className="text-lg font-medium text-gray-900">Total Subscribers</h3>
-            <p className="text-3xl font-bold text-blue-600">{count}</p>
+          <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow duration-200">
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="text-lg font-semibold text-gray-700 mb-2">Total Subscribers</h3>
+                <p className="text-4xl font-bold text-blue-600">{count}</p>
+              </div>
+              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                <span className="text-blue-600 text-xl">👥</span>
+              </div>
+            </div>
           </div>
-          <div className="bg-white rounded-lg shadow p-6">
-            <h3 className="text-lg font-medium text-gray-900">Active Subscribers</h3>
-            <p className="text-3xl font-bold text-green-600">
-              {subscribers.filter(s => s.status === 'active').length}
-            </p>
+          <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow duration-200">
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="text-lg font-semibold text-gray-700 mb-2">Active Subscribers</h3>
+                <p className="text-4xl font-bold text-green-600">
+                  {subscribers.filter(s => s.status === 'active').length}
+                </p>
+              </div>
+              <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+                <span className="text-green-600 text-xl">✅</span>
+              </div>
+            </div>
           </div>
-          <div className="bg-white rounded-lg shadow p-6">
-            <h3 className="text-lg font-medium text-gray-900">Today&apos;s Signups</h3>
-            <p className="text-3xl font-bold text-purple-600">
-              {subscribers.filter(s => {
-                const today = new Date().toDateString();
-                return new Date(s.created_at).toDateString() === today;
-              }).length}
-            </p>
+          <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow duration-200">
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="text-lg font-semibold text-gray-700 mb-2">Today&apos;s Signups</h3>
+                <p className="text-4xl font-bold text-purple-600">
+                  {subscribers.filter(s => {
+                    const today = new Date().toDateString();
+                    return new Date(s.created_at).toDateString() === today;
+                  }).length}
+                </p>
+              </div>
+              <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                <span className="text-purple-600 text-xl">📈</span>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Actions */}
-        <div className="mb-6">
+        <div className="mb-8 flex flex-wrap gap-4">
           <button
             onClick={exportCSV}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors"
+            className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center gap-2"
           >
+            <span>📊</span>
             Export CSV
           </button>
           <button
             onClick={loadData}
-            className="ml-3 bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg transition-colors"
+            className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center gap-2"
           >
-            Refresh
+            <span>🔄</span>
+            Refresh Data
+          </button>
+          <button
+            onClick={() => setIsAuthenticated(false)}
+            className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg flex items-center gap-2"
+          >
+            <span>🚪</span>
+            Logout
           </button>
         </div>
 
         {/* Error */}
         {error && (
-          <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
-            <p className="text-red-800">{error}</p>
+          <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-6 shadow-sm">
+            <div className="flex items-center gap-2">
+              <span className="text-red-500 text-xl">⚠️</span>
+              <p className="text-red-800 font-medium">{error}</p>
+            </div>
           </div>
         )}
 
         {/* Subscribers Table */}
-        <div className="bg-white rounded-lg shadow overflow-hidden">
-          <div className="px-6 py-4 border-b border-gray-200">
-            <h3 className="text-lg font-medium text-gray-900">Recent Subscribers</h3>
+        <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+          <div className="px-6 py-4 bg-gradient-to-r from-gray-50 to-gray-100 border-b border-gray-200">
+            <h3 className="text-xl font-semibold text-gray-900 flex items-center gap-2">
+              <span>📋</span>
+              Recent Subscribers
+            </h3>
           </div>
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
                 <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                     Email
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                     Date Joined
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                     Status
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                     User Agent
                   </th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
-                {subscribers.map((subscriber) => (
-                  <tr key={subscriber.id} className="hover:bg-gray-50">
+                {subscribers.map((subscriber, index) => (
+                  <tr key={subscriber.id} className={`hover:bg-blue-50 transition-colors duration-200 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                       {subscriber.email}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
                       {new Date(subscriber.created_at).toLocaleDateString()}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
+                      <span className={`inline-flex px-3 py-1 text-xs font-semibold rounded-full ${
                         subscriber.status === 'active' 
-                          ? 'bg-green-100 text-green-800' 
-                          : 'bg-red-100 text-red-800'
+                          ? 'bg-green-100 text-green-800 border border-green-200' 
+                          : 'bg-red-100 text-red-800 border border-red-200'
                       }`}>
-                        {subscriber.status}
+                        {subscriber.status === 'active' ? '✅ Active' : '❌ Inactive'}
                       </span>
                     </td>
                     <td className="px-6 py-4 text-sm text-gray-500 max-w-xs truncate">
