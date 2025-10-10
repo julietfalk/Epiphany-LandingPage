@@ -119,16 +119,7 @@ export default function CalPage() {
               <h2 className="pre-order-cta-title">Be the First to Pre Order</h2>
               <p className="pre-order-cta-tagline">Get Early Access and exclusive updates as we build the future of Focus</p>
               
-              <div className="pre-order-cta-form">
-                <input 
-                  type="email" 
-                  placeholder="Enter your Email" 
-                  className="pre-order-cta-input"
-                />
-                <button className="pre-order-cta-button">Join the Waitlist</button>
-              </div>
-              
-              <p className="pre-order-cta-privacy">Don&apos;t worry, We keep your inbox as distraction-free as your mind.</p>
+              <EmailForm variant="secondary" className="pre-order-cta-email-form" />
             </div>
             
             <div className="pre-order-cta-right">

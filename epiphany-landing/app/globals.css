@@ -1361,6 +1361,57 @@ body {
   margin: 0;
 }
 
+/* Pre-order email form styling */
+.pre-order-cta-email-form {
+  width: 100%;
+  max-width: 100%;
+}
+
+.pre-order-cta-email-form .email-form-container {
+  gap: 16px;
+}
+
+.pre-order-cta-email-form .email-form-row {
+  gap: 12px;
+}
+
+.pre-order-cta-email-form .email-input {
+  background: #1A3255;
+  border: 1px solid #4A90E2;
+  color: #FFF !important;
+  font-size: 14px;
+  padding: 12px 16px;
+  border-radius: 8px;
+}
+
+.pre-order-cta-email-form .email-input::placeholder {
+  color: #9F9F9F !important;
+  opacity: 1 !important;
+}
+
+.pre-order-cta-email-form .email-input:focus {
+  background: #5a5a5a;
+  border-color: #60A5FA;
+  color: #FFF !important;
+}
+
+.pre-order-cta-email-form .join-waitlist-button-side {
+  background: linear-gradient(94deg, #FFF 0.36%, #B4B4B4 50%, #E8E7E7 74.82%, #BDBDBD 99.64%);
+  color: #000;
+  font-size: 14px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  min-width: 120px;
+}
+
+.pre-order-cta-email-form .privacy-text {
+  color: rgba(255, 255, 255, 0.54);
+  text-align: center;
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  margin: 0;
+}
+
 /* Responsive Pre-Order CTA */
 @media (max-width: 768px) {
   .pre-order-cta-section {
@@ -1402,6 +1453,16 @@ body {
 
   .pre-order-cta-button {
     width: 100%;
+  }
+
+  .pre-order-cta-email-form .email-form-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .pre-order-cta-email-form .join-waitlist-button-side {
+    width: 100%;
+    min-width: unset;
   }
 
   .pre-order-cta-illustration {
