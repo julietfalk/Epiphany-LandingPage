@@ -1,187 +1,222 @@
 # Epiphany Landing Page
 
-A high-conversion landing page for Epiphany - a performance headset + AI browser for flow state.
+A modern, high-conversion landing page for Epiphany - a performance headset + AI browser system designed to help users achieve optimal focus and flow state.
 
 ## 🚀 Features
 
-- **Beautiful Design**: Blue, silver, and coral color scheme with metallic hints
-- **Interactive Cursor**: Paint brush effect that moves the gradient background
-- **Email Collection**: Waitlist signup with Resend integration
-- **Responsive**: Mobile-first design that looks great on all devices
-- **Performance**: Optimized for speed and accessibility
+- **Beautiful Design**: Modern UI with blue, silver, and coral color scheme
+- **Interactive Animations**: Cursor brush effect and smooth Framer Motion animations
+- **Waitlist Management**: Email collection with Supabase database storage
+- **Email Notifications**: Automated welcome emails and admin notifications via SendGrid
+- **Responsive Design**: Mobile-first approach that looks great on all devices
+- **Performance Optimized**: Built with Next.js 15 and React 19 for speed
 
-## 📧 Email Setup with Resend
+## 🛠️ Tech Stack
 
-### 1. Get Your Resend API Key
+- **Framework**: Next.js 15.4.6 with App Router
+- **React**: 19.1.0
+- **TypeScript**: 5.x
+- **Styling**: Tailwind CSS 4
+- **Animations**: Framer Motion
+- **Database**: Supabase (PostgreSQL)
+- **Email Service**: SendGrid
+- **Form Validation**: React Hook Form + Zod
+- **Icons**: Lucide React
 
-1. Go to [resend.com](https://resend.com) and create an account
-2. Navigate to API Keys in your dashboard
-3. Create a new API key
-4. Copy the API key
+## 📋 Prerequisites
 
-### 2. Configure Environment Variables
+- Node.js 18+ and npm
+- Supabase account and project
+- SendGrid account and API key
 
-Create a `.env.local` file in your project root:
+## 🔧 Setup
+
+### 1. Clone and Install
 
 ```bash
-# Resend API Key
-RESEND_API_KEY=re_xxxxxxxxxxxx
+# Clone the repository
+git clone <repository-url>
+cd epiphany-landing
 
-# From email address (must be verified in Resend)
+# Install dependencies
+npm install
+```
+
+### 2. Environment Variables
+
+Create a `.env.local` file in the project root:
+
+```bash
+# Supabase Configuration
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+
+# SendGrid Configuration
+SENDGRID_API_KEY=your_sendgrid_api_key
 FROM_EMAIL=noreply@yourdomain.com
-
-# Optional: Admin email for notifications
 ADMIN_EMAIL=admin@yourdomain.com
 ```
 
-### 3. Verify Your Domain
+### 3. Supabase Database Setup
 
-1. In Resend dashboard, go to Domains
-2. Add and verify your domain
-3. Update `FROM_EMAIL` in `.env.local` to use your verified domain
+1. Go to your [Supabase Dashboard](https://supabase.com/dashboard)
+2. Navigate to SQL Editor
+3. Run the SQL script from `supabase-setup.sql` to create the `subscribers` table
 
-### 4. Test the Integration
+The script will:
+- Create a `subscribers` table with email, timestamps, user agent, and IP tracking
+- Set up indexes for performance
+- Configure Row Level Security (RLS)
+- Add automatic timestamp updates
 
-1. Start your dev server: `npm run dev`
-2. Go to the landing page
-3. Enter an email address
-4. Check your email for the welcome message
-5. Check your admin email for the notification
+### 4. SendGrid Setup
 
-## 🎥 Video Integration
+1. Create an account at [SendGrid](https://sendgrid.com)
+2. Navigate to Settings → API Keys
+3. Create a new API key with "Mail Send" permissions
+4. Add the API key to your `.env.local` file
+5. Verify your sender email address in SendGrid
 
-### Adding Your Product Video
-
-1. **Video Files**: Place your video file in the `public/` folder:
-   - `epiphany-demo.mp4` (MP4 format - required)
-   - `video-poster.jpg` (Optional poster image to replace the SVG)
-
-2. **Video Specifications**:
-   - **Format**: MP4 (H.264) - widely supported
-   - **Resolution**: 1920x1080 or 1280x720 (16:9 aspect ratio)
-   - **Duration**: 8-30 seconds (your 8-second video is perfect!)
-   - **File Size**: Keep under 15MB for fast loading
-   - **Content**: Show the headset, AI browser interface, and user experience
-
-3. **Video Content Ideas**:
-   - Headset being worn and activated
-   - AI browser interface in action
-   - Focus mode transitions
-   - User achieving flow state
-   - Data visualization of focus patterns
-
-4. **Optimization Tips**:
-   - Use HandBrake or FFmpeg to compress video
-   - Consider creating multiple quality versions
-   - Test on different devices and connections
-
-### Current Video Section Features
-
-- **Auto-play loop** on desktop (muted for user experience)
-- **Mobile play button** overlay for better mobile experience
-- **Elegant border** with gradient glow effect
-- **Responsive design** that works on all screen sizes
-- **Loading states** and fallback handling
-- **Smooth animations** that match your page design
-
-## 🛠️ Development
+### 5. Run Development Server
 
 ```bash
-# Install dependencies
-npm install
-
-# Start development server
 npm run dev
-
-# Build for production
-npm run build
-
-# Start production server
-npm start
 ```
+
+Visit [http://localhost:3000](http://localhost:3000) to see your landing page.
 
 ## 📁 Project Structure
 
 ```
 epiphany-landing/
 ├── app/
-│   ├── api/subscribe/     # Email subscription API
-│   ├── globals.css        # Global styles and animations
-│   ├── layout.tsx         # Root layout
-│   └── page.tsx           # Landing page
+│   ├── about/              # About page
+│   ├── admin/              # Admin dashboard
+│   ├── api/
+│   │   └── subscribe/      # Waitlist subscription API endpoint
+│   ├── brain/              # Brain/headset feature page
+│   ├── cal/                # Calendar/tracking feature page
+│   ├── shield/             # Shield/AI browser feature page
+│   ├── globals.css         # Global styles and design tokens
+│   ├── layout.tsx          # Root layout component
+│   └── page.tsx            # Main landing page
 ├── components/
-│   ├── EmailForm.tsx      # Email signup form
-│   └── FeatureCard.tsx    # Feature display cards
+│   ├── AnimatedFactCards.tsx  # Animated statistics cards
+│   ├── EmailForm.tsx          # Email subscription form
+│   ├── FeatureCard.tsx        # Feature display cards
+│   └── Testimonials.tsx       # Testimonials section
 ├── lib/
-│   └── resend.ts          # Resend email utilities
-└── public/                 # Static assets
+│   ├── design-tokens.ts    # Central design system values
+│   ├── sendgrid.ts         # SendGrid email utilities
+│   └── supabase.ts         # Supabase client and database functions
+├── public/                 # Static assets (images, videos, icons)
+└── supabase-setup.sql      # Database schema setup script
 ```
+
+## 🗄️ Database (Supabase)
+
+The waitlist data is stored in **Supabase**, a PostgreSQL database. The `subscribers` table includes:
+
+- `id`: Unique identifier (UUID)
+- `email`: Subscriber email address (unique)
+- `created_at`: Timestamp of signup
+- `user_agent`: Browser/user agent information
+- `ip_address`: IP address for tracking
+- `status`: Subscription status (`active` or `unsubscribed`)
+- `updated_at`: Last update timestamp
+
+### Viewing Waitlist Data
+
+You can view and manage subscribers through:
+1. **Supabase Dashboard**: Go to Table Editor → `subscribers` table
+2. **Admin Page**: Visit `/admin` (if implemented)
+3. **Supabase API**: Use the functions in `lib/supabase.ts`
+
+## 📧 Email System
+
+The project uses **SendGrid** for email delivery:
+
+- **Welcome Emails**: Sent automatically when users join the waitlist
+- **Admin Notifications**: Alerts sent to admin email for each new signup
+- **Email Templates**: Customizable HTML templates in `lib/sendgrid.ts`
 
 ## 🎨 Design System
 
 ### Colors
-- **Deep Blue**: `#1e3a8a` - Primary brand color
-- **Coral**: `#f97316` - Accent and CTA color
-- **Silver**: `#e5e7eb` - Background and neutral
-- **Metallic**: `#d1d5db` - Subtle metallic hints
+- **Deep Blue**: Primary brand color
+- **Coral**: Accent and CTA color
+- **Silver**: Background and neutral tones
+- **Metallic**: Subtle metallic hints
 
 ### Typography
-- **Headlines**: Saira Extra Condensed + Orbitron
-- **Body**: Inter (clean, readable)
+- **Headlines**: The Seasons (serif) for brand voice
+- **Body**: Manrope (sans-serif) for readability
 
-### Animations
-- **Cursor Effect**: Interactive paint brush that moves the gradient
-- **Framer Motion**: Smooth entrance animations
-- **CSS Transitions**: Hover effects and micro-interactions
-
-## 📊 Analytics & Tracking
-
-The current setup includes:
-- ✅ Email collection via Resend
-- ✅ Server-side logging
-- ✅ Admin notifications
-- 🔄 Database storage (TODO)
-- 🔄 Conversion tracking (TODO)
+### Design Tokens
+Central design values are stored in `lib/design-tokens.ts` for easy updates from Figma.
 
 ## 🚀 Deployment
 
 ### Vercel (Recommended)
-1. Push to GitHub
-2. Connect repository to Vercel
-3. Add environment variables in Vercel dashboard
+
+1. Push your code to GitHub
+2. Import the repository in [Vercel](https://vercel.com)
+3. Add all environment variables in the Vercel dashboard
 4. Deploy!
 
-### Other Platforms
-- **Netlify**: Add build command and environment variables
-- **Railway**: Deploy with environment variables
-- **Self-hosted**: Build and serve the static files
+### Environment Variables for Production
 
-## 🔧 Customization
+Make sure to set all environment variables in your deployment platform:
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- `SENDGRID_API_KEY`
+- `FROM_EMAIL`
+- `ADMIN_EMAIL`
 
-### Colors
-Update CSS variables in `app/globals.css`:
-```css
-:root {
-  --deep-blue: #1e3a8a;
-  --coral: #f97316;
-  --silver: #e5e7eb;
-  /* ... */
-}
+## 📝 Available Scripts
+
+```bash
+# Development server with Turbopack
+npm run dev
+
+# Production build
+npm run build
+
+# Start production server
+npm start
+
+# Run linter
+npm run lint
 ```
 
-### Content
-Edit copy in `app/page.tsx` and `components/`
+## 🔒 Security Notes
 
-### Email Templates
-Customize email HTML in `lib/resend.ts`
+- Supabase uses Row Level Security (RLS) for database access
+- API keys should never be committed to version control
+- Use environment variables for all sensitive configuration
+- Consider implementing rate limiting for the subscription endpoint
 
-## 📞 Support
+## 🐛 Troubleshooting
 
-For issues or questions:
-1. Check the console for error messages
-2. Verify your Resend API key and domain
-3. Ensure environment variables are set correctly
+### Email Not Sending
+- Verify SendGrid API key is correct
+- Check that sender email is verified in SendGrid
+- Review SendGrid activity logs
+
+### Database Connection Issues
+- Verify Supabase URL and anon key are correct
+- Check Supabase project status
+- Ensure RLS policies allow the operations you need
+
+### Build Errors
+- Clear `.next` folder and rebuild: `rm -rf .next && npm run build`
+- Check Node.js version (requires 18+)
+- Verify all dependencies are installed: `npm install`
 
 ## 📄 License
 
 All rights reserved © 2025 Epiphany
+
+## 🤝 Contributing
+
+This is a private project. For questions or issues, please contact the development team.
