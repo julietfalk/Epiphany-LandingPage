@@ -1,23 +1,29 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
-import { sendWelcomeEmail, sendAdminNotification } from '@/lib/sendgrid';
-import { addSubscriber } from '@/lib/supabase';
 
 const subscribeSchema = z.object({
   email: z.string().email('Invalid email address'),
 });
 
+// Check if Supabase is configured
+const isSupabaseConfigured = () =>
+  process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+// Check if SendGrid is configured
+const isSendGridConfigured = () =>
+  process.env.SENDGRID_API_KEY?.startsWith('SG.');
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    
+
     // Validate request body
     const validatedData = subscribeSchema.parse(body);
-    
+
     // Get user info for tracking
     const userAgent = request.headers.get('user-agent');
     const ipAddress = request.headers.get('x-forwarded-for') || 'unknown';
-    
+
     // Log the subscription
     console.log('New subscription:', {
       email: validatedData.email,
@@ -26,35 +32,46 @@ export async function POST(request: NextRequest) {
       ip: ipAddress,
     });
 
-    // Store subscriber in Supabase database
-    const dbResult = await addSubscriber(
-      validatedData.email,
-      userAgent ?? undefined,
-      ipAddress ?? undefined
-    );
-    if (!dbResult.success) {
-      console.error('Failed to store subscriber in database:', dbResult.error);
-      // Continue anyway - don't fail the subscription
+    let dbResult = { success: false, error: 'Supabase not configured' };
+    let welcomeResult = { success: false, error: 'SendGrid not configured' };
+    let adminResult = { success: false, error: 'SendGrid not configured' };
+
+    // Store subscriber in Supabase database (if configured)
+    if (isSupabaseConfigured()) {
+      const { addSubscriber } = await import('@/lib/supabase');
+      dbResult = await addSubscriber(
+        validatedData.email,
+        userAgent ?? undefined,
+        ipAddress ?? undefined
+      );
+      if (!dbResult.success) {
+        console.error('Failed to store subscriber in database:', dbResult.error);
+      }
+    } else {
+      console.warn('Supabase not configured - skipping database storage');
     }
 
-    // Send welcome email via SendGrid
-    const welcomeResult = await sendWelcomeEmail(validatedData.email);
-    if (!welcomeResult.success) {
-      console.error('Failed to send welcome email:', welcomeResult.error);
-      // Continue anyway - don't fail the subscription
+    // Send welcome email via SendGrid (if configured)
+    if (isSendGridConfigured()) {
+      const { sendWelcomeEmail, sendAdminNotification } = await import('@/lib/sendgrid');
+
+      welcomeResult = await sendWelcomeEmail(validatedData.email);
+      if (!welcomeResult.success) {
+        console.error('Failed to send welcome email:', welcomeResult.error);
+      }
+
+      adminResult = await sendAdminNotification(validatedData.email);
+      if (!adminResult.success) {
+        console.error('Failed to send admin notification:', adminResult.error);
+      }
+    } else {
+      console.warn('SendGrid not configured - skipping email sending');
     }
 
-    // Send admin notification
-    const adminResult = await sendAdminNotification(validatedData.email);
-    if (!adminResult.success) {
-      console.error('Failed to send admin notification:', adminResult.error);
-      // Continue anyway - don't fail the subscription
-    }
-    
     // Return success response
     return NextResponse.json(
-      { 
-        success: true, 
+      {
+        success: true,
         message: 'Successfully subscribed to waitlist! Check your email for confirmation.',
         timestamp: new Date().toISOString(),
         emailSent: welcomeResult.success,

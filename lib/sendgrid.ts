@@ -1,6 +1,10 @@
 import sgMail from '@sendgrid/mail';
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
+// Only set API key if configured
+const apiKey = process.env.SENDGRID_API_KEY;
+if (apiKey?.startsWith('SG.')) {
+  sgMail.setApiKey(apiKey);
+}
 
 export async function sendWelcomeEmail(email: string) {
   try {

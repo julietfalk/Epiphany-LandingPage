@@ -1,9 +1,28 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+let supabaseInstance: SupabaseClient | null = null;
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+// Lazy initialization to prevent crashes when env vars are missing
+export const getSupabase = () => {
+  if (!supabaseInstance) {
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+    if (!supabaseUrl || !supabaseAnonKey) {
+      throw new Error('Supabase environment variables not configured');
+    }
+
+    supabaseInstance = createClient(supabaseUrl, supabaseAnonKey);
+  }
+  return supabaseInstance;
+};
+
+// For backwards compatibility
+export const supabase = {
+  get client() {
+    return getSupabase();
+  }
+};
 
 // Database types
 export interface Subscriber {
@@ -18,7 +37,7 @@ export interface Subscriber {
 // Database functions
 export async function addSubscriber(email: string, userAgent?: string, ipAddress?: string) {
   try {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from('subscribers')
       .insert([
         {
@@ -45,7 +64,7 @@ export async function addSubscriber(email: string, userAgent?: string, ipAddress
 
 export async function getSubscribers() {
   try {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from('subscribers')
       .select('*')
       .order('created_at', { ascending: false });
@@ -64,7 +83,7 @@ export async function getSubscribers() {
 
 export async function getSubscriberCount() {
   try {
-    const { count, error } = await supabase
+    const { count, error } = await getSupabase()
       .from('subscribers')
       .select('*', { count: 'exact', head: true })
       .eq('status', 'active');
