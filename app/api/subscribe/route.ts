@@ -32,9 +32,9 @@ export async function POST(request: NextRequest) {
       ip: ipAddress,
     });
 
-    let dbResult = { success: false, error: 'Supabase not configured' };
-    let welcomeResult = { success: false, error: 'SendGrid not configured' };
-    let adminResult = { success: false, error: 'SendGrid not configured' };
+    let dbResult: { success: boolean; error?: string } = { success: false, error: 'Supabase not configured' };
+    let welcomeResult: { success: boolean; error?: string } = { success: false, error: 'SendGrid not configured' };
+    let adminResult: { success: boolean; error?: string } = { success: false, error: 'SendGrid not configured' };
 
     // Store subscriber in Supabase database (if configured)
     if (isSupabaseConfigured()) {
