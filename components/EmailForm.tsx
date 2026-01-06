@@ -162,10 +162,10 @@ export default function EmailForm({ variant = 'primary', className = '' }: Email
             {isSubmitting ? (
               <div className="flex items-center justify-center gap-2">
                 <div className="loading-spinner" />
-                <span>Redirecting...</span>
+                <span>Taking you to checkout...</span>
               </div>
             ) : (
-              'Get Early Access'
+              'Reserve Now'
             )}
           </motion.button>
         </div>
@@ -199,9 +199,6 @@ export default function EmailForm({ variant = 'primary', className = '' }: Email
           )}
         </AnimatePresence>
 
-        <p className="privacy-text">
-          Don&apos;t worry, We keep your inbox as distraction-free as your mind.
-        </p>
       </form>
     </div>
   );
