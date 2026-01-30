@@ -83,7 +83,7 @@ export default function Home() {
             <div className="nav-right">
               <Link href="/" className="nav-link">Home</Link>
               <Link href="/about" className="nav-link">About</Link>
-              <button 
+              <button
                 className="waitlist-button-nav"
                 onClick={() => {
                   const preOrderSection = document.getElementById('pre-order');
@@ -92,7 +92,7 @@ export default function Home() {
                   }
                 }}
               >
-                Join the Waitlist
+                Reserve Yours
               </button>
             </div>
           </div>
@@ -278,8 +278,8 @@ export default function Home() {
         <section id="pre-order" className="pre-order-cta-section">
           <div className="pre-order-cta-container">
             <div className="pre-order-cta-left">
-              <h2 className="pre-order-cta-title">Be the First to Pre Order</h2>
-              <p className="pre-order-cta-tagline">Get Early Access and exclusive updates as we build the future of Focus</p>
+              <h2 className="pre-order-cta-title">Reserve Your Epiphany</h2>
+              <p className="pre-order-cta-tagline">Secure early access pricing before public launch</p>
               
               <EmailForm variant="secondary" className="pre-order-cta-email-form" />
             </div>

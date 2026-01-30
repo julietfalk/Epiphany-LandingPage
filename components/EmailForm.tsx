@@ -75,12 +75,10 @@ export default function EmailForm({ variant = 'primary', className = '' }: Email
       const result = await response.json();
 
       if (response.ok) {
-        setSubmitStatus('success');
-        setSubmitMessage('You\'re on the list! We\u2019ll be in touch soon.');
-        setIsSubscribed(true); // Update shared state
-        reset();
-        // Redirect to Stripe payment link after successful submission
-        window.location.href = 'https://buy.stripe.com/5kQaEY8zdeGE5fZ651c7u01';
+        // Redirect to Stripe checkout with prefilled email
+        const stripeUrl = `https://buy.stripe.com/5kQaEY8zdeGE5fZ651c7u01?prefilled_email=${encodeURIComponent(data.email)}`;
+        window.location.href = stripeUrl;
+        return;
       } else {
         setSubmitStatus('error');
         setSubmitMessage(result.message || 'Something went wrong. Please try again.');
@@ -164,10 +162,10 @@ export default function EmailForm({ variant = 'primary', className = '' }: Email
             {isSubmitting ? (
               <div className="flex items-center justify-center gap-2">
                 <div className="loading-spinner" />
-                <span>Joining...</span>
+                <span>Taking you to checkout...</span>
               </div>
             ) : (
-              'Join the Waitlist'
+              'Reserve Now'
             )}
           </motion.button>
         </div>
@@ -201,9 +199,6 @@ export default function EmailForm({ variant = 'primary', className = '' }: Email
           )}
         </AnimatePresence>
 
-        <p className="privacy-text">
-          Don&apos;t worry, We keep your inbox as distraction-free as your mind.
-        </p>
       </form>
     </div>
   );
