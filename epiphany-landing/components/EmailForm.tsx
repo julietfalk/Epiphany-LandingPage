@@ -79,6 +79,8 @@ export default function EmailForm({ variant = 'primary', className = '' }: Email
         setSubmitMessage('You\'re on the list! We\u2019ll be in touch soon.');
         setIsSubscribed(true); // Update shared state
         reset();
+        // Redirect to Stripe payment link after successful submission
+        window.location.href = 'https://buy.stripe.com/5kQaEY8zdeGE5fZ651c7u01';
       } else {
         setSubmitStatus('error');
         setSubmitMessage(result.message || 'Something went wrong. Please try again.');
